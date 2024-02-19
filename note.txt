@@ -26,8 +26,8 @@ COMPITI GIORNO 1:
 
 -- Pagina profilo:{
 . profilo (Francesco) -- FATTO 
-. analisi (Matteo)
-. risorse (Matteo)
+. analisi (Matteo) FATTO
+. risorse (Matteo) FATTO
 . informazioni (Giulio) fatto
 . esperienza (Giulio) //pensare struttura per fetch
 . formazione (Simone)

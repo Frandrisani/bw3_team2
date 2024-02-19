@@ -7,7 +7,7 @@ const Analisi = () => {
   return (
     <>
       <Container>
-        <div className=" border border-secondary-subtle bg-white rounded-3 ">
+        <div className=" border border-secondary-subtle bg-white rounded-3 w-75 mt-3  ">
           <Row className="ms-3 mt-4">
             <h5 className=" mb-0">Analisi</h5>
             <p className="mb-0">
@@ -59,7 +59,7 @@ const Analisi = () => {
           </Row>
           <Row>
             <Col>
-              <hr />
+              <hr className="mt-0" />
               <Link to="/AnalisiPage" className="text-decoration-none">
                 <p className="text-center opacity-75 text-black ">
                   Mostra tutte le analisi <i className="bi bi-arrow-right"></i>

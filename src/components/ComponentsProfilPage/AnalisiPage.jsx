@@ -1,11 +1,79 @@
-import { Col, Container, Row } from "react-bootstrap";
+import { useEffect } from "react";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import { useDispatch, useSelector } from "react-redux";
+import { getPersonalProfile } from "../../redux/actions/index";
+import { Link } from "react-router-dom";
 
 const AnalisiPage = () => {
+  const dispatch = useDispatch();
+  const profilo = useSelector((state) => state.profile.profileDettagli);
+  const dataCorrente = new Date();
+
+  useEffect(() => {
+    dispatch(getPersonalProfile());
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  const giornoCorrente = dataCorrente.getDay();
+  const giorniSettimana = [
+    "Domenica",
+    "Lunedì",
+    "Martedì",
+    "Mercoledì",
+    "Giovedì",
+    "Venerdì",
+    "Sabato",
+  ];
+  const giornoAttuale = giorniSettimana[giornoCorrente];
+
+  const giornoDelMese = dataCorrente.getDate();
+
+  const meseCorrente = dataCorrente.getMonth();
+  const mesi = [
+    "Gennaio",
+    "Febbraio",
+    "Marzo",
+    "Aprile",
+    "Maggio",
+    "Giugno",
+    "Luglio",
+    "Agosto",
+    "Settembre",
+    "Ottobre",
+    "Novembre",
+    "Dicembre",
+  ];
+  const meseAttuale = mesi[meseCorrente];
+
   return (
     <>
       <Container>
         <Row className=" justify-content-center mt-4">
           <div className=" border border-secondary-subtle bg-white rounded-3 w-75">
+            <Row className="ms-3 my-3">
+              <Col>
+                <div className="d-flex">
+                  <Link to="/" className="text-decoration-none">
+                    <img
+                      src={profilo.image}
+                      alt="logo"
+                      style={{ width: 50 }}
+                      className=" rounded-circle me-3"
+                    />
+                  </Link>
+                  <div>
+                    <h5 className="mb-0">Analisi e strumenti</h5>
+                    <p className="mb-0">
+                      {giornoAttuale}, {giornoDelMese} {meseAttuale}
+                    </p>
+                  </div>
+                </div>
+              </Col>
+            </Row>
+          </div>
+          <div className=" border border-secondary-subtle bg-white rounded-3 w-75 mt-3">
             <Row className="ms-3 mt-4">
               <h5 className=" opacity-75 mb-4">
                 Analisi <i className="bi bi-question-circle-fill fs-6 "></i>
