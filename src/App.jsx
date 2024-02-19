@@ -1,5 +1,3 @@
-import CFooter from "./components/CFooter";
-
 function App() {
   return <></>;
 }
