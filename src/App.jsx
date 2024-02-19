@@ -1,5 +1,13 @@
+import CFooter from "./components/CFooter";
+
+
+
+
+
 function App() {
-  return <></>;
+  return <>
+ 
+  </>;
 }
 
 export default App;
