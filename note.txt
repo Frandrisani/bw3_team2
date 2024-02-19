@@ -5,22 +5,24 @@ ICONE:
 
 COMPITI GIORNO 1: 
 - SEZIONI: {
---navbar 
+-- Navbar (Simone)
 
---pagina profilo:{
-. profilo
-. analisi
-. risorse
-. informazioni
-. esperienza
-. formazione
-. competenze
-. lingue
-.interessi
+-- Pagina profilo:{
+. profilo (Francesco e Matteo)
+. analisi (Francesco)
+. risorse (Matteo)
+. informazioni (Giulio)
+. esperienza (Giulio) //pensare struttura per fetch
+. formazione (Simone)
+. competenze (Simone)
+. lingue (Valerio)
+.interessi (Valerio) //pensare struttura per fetch (utenti registrati)
 }
 
---aside (parte di destra)
+-- Footer (Giulio)
 
---footer
+-- Store Redux (Francesco / Matteo)
 
+//Da capire meglio
+--aside (parte di destra) ???
 }
