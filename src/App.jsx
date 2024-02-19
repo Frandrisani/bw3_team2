@@ -1,5 +1,11 @@
+import Profile from "./components/ComponentsProfilPage/Profilo";
+
 function App() {
-  return <></>;
+  return (
+    <>
+      <Profile />
+    </>
+  );
 }
 
 export default App;
