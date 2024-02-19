@@ -25,8 +25,8 @@ COMPITI GIORNO 1:
 -- Navbar (Simone)
 
 -- Pagina profilo:{
-. profilo (Francesco e Matteo)
-. analisi (Francesco)
+. profilo (Francesco) -- FATTO 
+. analisi (Matteo)
 . risorse (Matteo)
 . informazioni (Giulio)
 . esperienza (Giulio) //pensare struttura per fetch
@@ -38,7 +38,7 @@ COMPITI GIORNO 1:
 
 -- Footer (Giulio)
 
--- Store Redux (Francesco / Matteo)
+-- Store Redux (Francesco / Matteo) 
 
 //Da capire meglio
 --aside (parte di destra) ???
