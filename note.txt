@@ -38,7 +38,7 @@ COMPITI GIORNO 1:
 
 -- Footer (Giulio) fatto 
 
--- Store Redux (Francesco / Matteo) 
+-- Store Redux (Francesco / Matteo) --- FATTO
 
 //Da capire meglio
 --aside (parte di destra) ???
