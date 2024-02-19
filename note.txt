@@ -36,7 +36,7 @@ COMPITI GIORNO 1:
 .interessi (Valerio) //pensare struttura per fetch (utenti registrati)
 }
 
--- Footer (Giulio)
+-- Footer (Giulio) fatto 
 
 -- Store Redux (Francesco / Matteo) 
 

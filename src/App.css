@@ -40,3 +40,20 @@
 .read-the-docs {
   color: #888;
 }
+/* FOOTER */
+
+.footer a{
+  /* ho creato una classe per il css del footer */
+text-decoration: none;
+color: rgb(52, 52, 52);
+
+}
+.footer a i {
+  font-size: 30px;
+}
+.footer-links {
+  align-items: flex-start;
+}
+.bi-caret-down-fill{
+  font-size: 12px !important;
+}

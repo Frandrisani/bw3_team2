@@ -1,5 +1,7 @@
-import ProfilePage from "./components/ProfilePage";
+import CFooter from "./components/CFooter";
+
 function App() {
+  return <></>;
   return <ProfilePage />;
 }
 
