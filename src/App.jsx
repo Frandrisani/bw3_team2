@@ -1,7 +1,12 @@
 import CFooter from "./components/CFooter";
+import ProfilePage from "./components/ProfilePage";
 
 function App() {
-  return <></>;
+  return (
+    <>
+      <ProfilePage />
+    </>
+  );
 }
 
 export default App;
