@@ -1,0 +1,26 @@
+ICONE:
+
+
+
+
+COMPITI GIORNO 1: 
+- SEZIONI: {
+--navbar 
+
+--pagina profilo:{
+. profilo
+. analisi
+. risorse
+. informazioni
+. esperienza
+. formazione
+. competenze
+. lingue
+.interessi
+}
+
+--aside (parte di destra)
+
+--footer
+
+}
