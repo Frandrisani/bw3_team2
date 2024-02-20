@@ -6,7 +6,10 @@ import { Pencil, Plus } from "react-bootstrap-icons";
 const Formazione = () => {
   return (
     <Container>
-      <Card className="border border-secondary-subtle bg-white rounded-3 w-75 mt-3">
+      <Card
+        className="border border-secondary-subtle bg-white rounded-3 mt-3"
+        style={{ width: "770px", marginLeft: "auto", marginRight: "auto" }}
+      >
         <Row className="ms-3 mt-4">
           <Col>
             <Card.Body>

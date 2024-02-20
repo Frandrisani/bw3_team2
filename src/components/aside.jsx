@@ -15,20 +15,24 @@ const Aside = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
-    <>
-      <UrlLinkdin />
-
+    <div style={{ paddingTop: "6rem" }}>
+      {" "}
+      {/*aggiunti per non sovrapporsi alla Navbar*/}
       <>
-        <ProfileConsulted
-          title="Altri profili consultati"
-          array={allProfile.filter((_, index) => index > 2 && index < 8)}
-        />
-        <ProfileConsulted
-          title="Persone che potresti conoscere"
-          array={allProfile.filter((_, index) => index >= 8 && index <= 13)}
-        />
+        <UrlLinkdin />
+
+        <>
+          <ProfileConsulted
+            title="Altri profili consultati"
+            array={allProfile.filter((_, index) => index > 2 && index < 8)}
+          />
+          <ProfileConsulted
+            title="Persone che potresti conoscere"
+            array={allProfile.filter((_, index) => index >= 8 && index <= 13)}
+          />
+        </>
       </>
-    </>
+    </div>
   );
 };
 
