@@ -16,13 +16,13 @@ const Interest = () => {
   return (
     <Container>
       <Row>
-        <Col>
+        <Col className="bg-white">
           <h1>interessi</h1>
           <Row>
             {spinner === true ? (
               <Spinner className="border-top" animation="border" />
             ) : (
-              allProfile.map(
+              allProfile.filter((_, index) => index > 2).map(
                 (item, index) =>
                   index < 2 && (
                     <Col md={6} key={index}>
@@ -36,10 +36,10 @@ const Interest = () => {
                             height={50}
                           />
                         </div>
-                        <div className="d-flex flex-column">
-                          <h3>
+                        <div className="d-flex flex-column align-items-center ">
+                          <h5>
                             {item.name} {item.surname} - 2°
-                          </h3>
+                          </h5>
                           <p className="m-0"></p>
                           <span>{item.title}</span>
                           <Button
