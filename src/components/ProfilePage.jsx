@@ -8,8 +8,8 @@ import Risorse from "./ComponentsProfilPage/Risorse";
 import Informazioni from "./ComponentsProfilPage/Informazioni";
 import Formazione from "./ComponentsProfilPage/Formazione";
 import Competenze from "./ComponentsProfilPage/Competenze";
-//import Lingue from "./ComponentsProfilPage/Lingue";
-//import Interessi from "./ComponentsProfilPage/Interessi";
+import Lingue from "./ComponentsProfilPage/Lingue";
+import Interessi from "./ComponentsProfilPage/Interessi";
 import CFooter from "./CFooter";
 
 const ProfilePage = () => {
@@ -22,8 +22,8 @@ const ProfilePage = () => {
       <Informazioni />
       <Formazione />
       <Competenze />
-      {/* <Lingue />
-      <Interessi />*/}
+      <Lingue />
+      <Interessi />
 
       <CFooter />
     </div>
