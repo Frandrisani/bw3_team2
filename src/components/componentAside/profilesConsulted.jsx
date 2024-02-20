@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { getAllProfile } from "../../redux/actions/index";
 import { Spinner } from "react-bootstrap/esm";
 
-const ProfileConsulted = () => {
+const ProfileConsulted = (prop) => {
   const dispatch = useDispatch();
   const allProfile = useSelector((state) => state.profile.allProfileList);
   const spinner = useSelector((state) => state.profile.isLoading);
@@ -15,16 +15,15 @@ const ProfileConsulted = () => {
 
   return (
     <Container>
-      <Row className="bg-white">
-        <h5 className="mt-4">Altri profili consultati</h5>
+      <Row className="bg-white mb-3">
+        <h5 className="mt-4">{prop.title}</h5>
         {spinner === true ? (
           <Spinner className="border-top" animation="border" />
         ) : (
-          allProfile
-            .filter((_, index) => index > 2)
+          prop.array          
             .map(
               (item, index) =>
-                index < 5 && (
+                 (
                   <Col
                     md={12}
                     className=" py-3  bg-white border-bottom"
@@ -62,8 +61,8 @@ const ProfileConsulted = () => {
             )
         )}
         <Col className=" btn-custom ">
-          <div className="text-center">
-            <p>Mostra tutto</p>
+          <div className="text-center my-3">
+            <p className="m-0">Mostra tutto</p>
           </div>
         </Col>
       </Row>
