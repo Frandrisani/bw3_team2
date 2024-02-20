@@ -1,6 +1,13 @@
 export const TURN_OFF_SPINNER = "TURN_OFF_SPINNER"; //* PER LO SPINNER PRE-CARICAMENTO FETCH
 export const PERSONAL_PROLFILE = "PERSONAL_PROLFILE"; //* PER IL NOSTRO PROFILO
 export const ALL_PROFILE = "ALL_PROFILE"; //* PER TUTTI I PROFILI
+export const UPDATE_PERSONAL_PROFILE = "UPDATE_PERSONAL_PROFILE"; //* PER MODIFICARE LE INFORMAZIONI DEL NOSTRO PROFILO
+
+//* FUNZIONE PER MODIFICARE LE INFORMAZIONI DEL NOSTRO PROFILO
+export const updatePersonalProfile = (updatedProfile) => ({
+  type: UPDATE_PERSONAL_PROFILE,
+  payload: updatedProfile,
+});
 
 //* FETCH DATI PROFILO PERSONALE -->  Qui in base al token che inseriamo ci restituisce gli elementi del nostro profilo
 export const getPersonalProfile = () => {
@@ -18,7 +25,7 @@ export const getPersonalProfile = () => {
       );
       if (resp.ok) {
         let fetchedPersonalProfile = await resp.json();
-       
+
         dispatch({
           type: PERSONAL_PROLFILE,
           payload: fetchedPersonalProfile,
