@@ -1,4 +1,4 @@
-import CFooter from "./components/CFooter";
+import Profile from "./components/ComponentsProfilPage/Profilo";
 
 function App() {
   return <></>;

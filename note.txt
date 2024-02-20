@@ -28,7 +28,7 @@ COMPITI GIORNO 1:
 . profilo (Francesco) -- FATTO 
 . analisi (Matteo)
 . risorse (Matteo)
-. informazioni (Giulio)
+. informazioni (Giulio) fatto
 . esperienza (Giulio) //pensare struttura per fetch
 . formazione (Simone)
 . competenze (Simone)
@@ -38,7 +38,7 @@ COMPITI GIORNO 1:
 
 -- Footer (Giulio) fatto 
 
--- Store Redux (Francesco / Matteo) 
+-- Store Redux (Francesco / Matteo) --- FATTO
 
 //Da capire meglio
 --aside (parte di destra) ???

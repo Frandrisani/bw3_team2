@@ -18,7 +18,7 @@ export const getPersonalProfile = () => {
       );
       if (resp.ok) {
         let fetchedPersonalProfile = await resp.json();
-        console.log(resp.json());
+       
         dispatch({
           type: PERSONAL_PROLFILE,
           payload: fetchedPersonalProfile,
