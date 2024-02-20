@@ -45,8 +45,8 @@ COMPITI GIORNO 1:
 }
 
 COMPITI GIORNO 2:
-- Perfezionare la sezione Profilo (parte di ProfilePage) --> Aggiungere modale per la modifica informazioni e foto e pulsante per modale
-- Creare Redux per la modifica e l'inserimento delle foto e nuove informazioni
-- Montare tutti i componenti nel ProfilePage e poi nell'App
-- Creare redux per sezione Esperienze dinamica
-- Creare l'asaid di destra
+- Perfezionare la sezione Profilo (parte di ProfilePage) --> Aggiungere modale per la modifica informazioni e foto e pulsante per modale (Matteo)
+- Creare Redux per la modifica e l'inserimento delle foto e nuove informazioni (Francesco)
+- Montare tutti i componenti nel ProfilePage e poi nell'App (Simone)
+- Creare redux per sezione Esperienze dinamica (Giulio)
+- Creare l'asaid di destra (Valerio)
