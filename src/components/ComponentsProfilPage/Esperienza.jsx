@@ -1,26 +1,20 @@
-import React, { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import Card from 'react-bootstrap/Card';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap-icons/font/bootstrap-icons.css";
-import { getAllExperience, getPersonalProfile } from '../../redux/actions'; 
+import React, { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap-icons/font/bootstrap-icons.css';
+import Card from "react-bootstrap/Card";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import { getAllExperience, getPersonalProfile } from "../../redux/actions";
 
 const Esperienza = () => {
-    const dispatch = useDispatch();
-    const userId = useSelector((state) => state.profile.profileDettagli._id);
-    console.log(userId) 
-    
-    useEffect(() => {
-        dispatch(getPersonalProfile());
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-      }, []);
+  const dispatch = useDispatch();
+  const userId = useSelector((state) => state.profile.profileDettagli?._id);
+  console.log(userId)
+  const allExperience = useSelector(
+    (state) => state.allExperienceList
+  );
 
-  useEffect(() => {
-    dispatch(getPersonalProfile());
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
 
   useEffect(() => {
     if (userId) {
@@ -44,7 +38,7 @@ const Esperienza = () => {
                   <strong>Esperienza</strong>
                 </Card.Title>
               </Col>
-              <Col xs={2}>{/* icone*/}</Col>
+              <Col xs={2}><i class="bi bi-plus-lg"></i> <i class="bi bi-pencil-fill"></i></Col>
             </Row>
             <blockquote className="blockquote mb-0">
               <Row>

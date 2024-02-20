@@ -10,8 +10,7 @@ function App() {
     <>
       <header></header>
       <main>
-        {/* <ProfilePage></ProfilePage> */}
-        <Esperienza></Esperienza>
+       
       </main>
       <footer></footer>
     </>
