@@ -17,20 +17,17 @@ const Aside = () => {
   return (
     <>
       <UrlLinkdin />
-      {spinner === true ? (
-        <Spinner className="border-top" animation="border" />
-      ) : (
-        <>
-          <ProfileConsulted
-            title="Altri profili consultati"
-            array={allProfile.filter((_, index) => index > 2 && index < 8)}
-          />
-          <ProfileConsulted
-            title="Persone che potresti conoscere"
-            array={allProfile.filter((_, index) => index >= 8 && index <= 13)}
-          />
-        </>
-      )}
+
+      <>
+        <ProfileConsulted
+          title="Altri profili consultati"
+          array={allProfile.filter((_, index) => index > 2 && index < 8)}
+        />
+        <ProfileConsulted
+          title="Persone che potresti conoscere"
+          array={allProfile.filter((_, index) => index >= 8 && index <= 13)}
+        />
+      </>
     </>
   );
 };
