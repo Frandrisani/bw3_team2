@@ -49,4 +49,4 @@ COMPITI GIORNO 2:
 - Creare Redux per la modifica e l'inserimento delle foto e nuove informazioni
 - Montare tutti i componenti nel ProfilePage e poi nell'App
 - Creare redux per sezione Esperienze dinamica
-- Creare l'asaid di destra
+- Creare l'asaid di destra 
