@@ -3,11 +3,14 @@ import { useSelector, useDispatch } from 'react-redux';
 import Card from 'react-bootstrap/Card';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap-icons/font/bootstrap-icons.css";
 import { getAllExperience, getPersonalProfile } from '../../redux/actions'; 
 
 const Esperienza = () => {
     const dispatch = useDispatch();
-    const userId = useSelector((state) => state.profile.profileDettagli._id); 
+    const userId = useSelector((state) => state.profile.profileDettagli._id);
+    console.log(userId) 
     
     useEffect(() => {
         dispatch(getPersonalProfile());

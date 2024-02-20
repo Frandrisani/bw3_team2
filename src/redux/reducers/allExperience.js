@@ -1,7 +1,7 @@
 import { TURN_OFF_SPINNER, ALL_EXPERIENCE, SINGLE_EXPERIENCE, ADD_EXPERIENCE, UPDATE_EXPERIENCE, DELETE_EXPERIENCE } from "../actions";
 
 const initialState = {
-  allExperienceList: [], //* QUI SI SALVANO TUTTE LE ESPERIENZE
+  allExperienceList: null, //* QUI SI SALVANO TUTTE LE ESPERIENZE
   isLoading: true, //* STATO DELLO SPINNER
 };
 
