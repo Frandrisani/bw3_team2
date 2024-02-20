@@ -43,8 +43,8 @@
 }
 /* FOOTER */
 
-.footer a{
-  /* ho creato una classe per il css del footer */
+/* ho creato una classe per il css del footer */
+/* .footer a{
 text-decoration: none;
 color: rgb(52, 52, 52);
 
@@ -57,4 +57,4 @@ color: rgb(52, 52, 52);
 }
 .bi-caret-down-fill{
   font-size: 12px !important;
-} */
+}  */
