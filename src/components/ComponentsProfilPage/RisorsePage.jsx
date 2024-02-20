@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 const RisorsePage = () => {
   return (
     <Container>
-      <Row className=" justify-content-center ms-3 mt-4">
-        <div className=" border border-secondary-subtle bg-white rounded-3 w-75 mt-3 mb-3">
-          <h5>
+      <Row className=" justify-content-center mt-4">
+        <div className=" border border-secondary-subtle bg-white rounded-3 w-75 mt-3 mb-3 ps-4">
+          <h5 className="mt-4">
             <Link to="/" className="text-decoration-none">
               <i className="bi bi-arrow-left me-3 text-dark"></i>
             </Link>
