@@ -32,31 +32,6 @@ const CNavbar = () => {
     ruolo: "Ruolo",
   });
 
-  useEffect(() => {
-    const token =
-      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWQzMTBjNDI0ZjYwNTAwMTkzN2Q0NGMiLCJpYXQiOjE3MDgzMzEyMDQsImV4cCI6MTcwOTU0MDgwNH0.jQqEZlorW4peoM1Scoy1oN7QuoEpJ1jl5anuqhJhRmk";
-    const headers = {
-      Authorization: `Bearer ${token}`,
-    };
-
-    fetch("https://striveschool-api.herokuapp.com/api/profile/me", { headers })
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        return response.json();
-      })
-      .then((data) => {
-        setUserProfile({
-          imageUrl: data.image,
-          nome: data.name,
-          ruolo: data.title,
-        });
-      })
-      .catch((error) => {
-        console.error("Errore nel recupero dei dati del profilo:", error);
-      });
-  }, []);
   return (
     <Navbar bg="white" expand="lg" className="shadow-sm fixed-top">
       <Container
@@ -173,11 +148,8 @@ const CNavbar = () => {
                       objectFit: "cover",
                       marginTop: "8px",
                     }}
-                    alt="Profile"
+                    alt="Profilo"
                   />
-                  <div style={{ fontSize: "0.75rem", marginTop: "4px" }}>
-                    {userProfile.nome} - {userProfile.ruolo}
-                  </div>
                 </Dropdown.Toggle>
                 <Dropdown.Menu
                   style={{
@@ -188,10 +160,13 @@ const CNavbar = () => {
                     textOverflow: "ellipsis",
                   }}
                 >
-                  {/* Gli elementi del menu vanno qui */}
-                  <Dropdown.Item href="#action/3.1">
-                    <strong>Account</strong>
+                  <Dropdown.Item
+                    href="#action/3.1"
+                    style={{ fontWeight: "bold" }}
+                  >
+                    {userProfile.nome} - {userProfile.ruolo}
                   </Dropdown.Item>
+                  <Dropdown.Divider />
                   <Dropdown.Item href="#action/3.2">
                     Impostazioni e privacy
                   </Dropdown.Item>
