@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from "react";
 import {
   Container,
   Navbar,
@@ -23,15 +22,6 @@ import {
 import Logo from "/logoIn.png";
 
 const CNavbar = () => {
-  {
-    /* STATO */
-  }
-  const [userProfile, setUserProfile] = useState({
-    imageUrl: "placeholder-profile.png", // URL di default o placeholder
-    nome: "Nome",
-    ruolo: "Ruolo",
-  });
-
   return (
     <Navbar bg="white" expand="lg" className="shadow-sm fixed-top">
       <Container
@@ -140,7 +130,7 @@ const CNavbar = () => {
                   }}
                 >
                   <img
-                    src={userProfile.imageUrl || "path-to-default-image"}
+                    src="/path-to-default-image"
                     style={{
                       width: "34px",
                       height: "34px",
@@ -164,7 +154,7 @@ const CNavbar = () => {
                     href="#action/3.1"
                     style={{ fontWeight: "bold" }}
                   >
-                    {userProfile.nome} - {userProfile.ruolo}
+                    Nome - Ruolo
                   </Dropdown.Item>
                   <Dropdown.Divider />
                   <Dropdown.Item href="#action/3.2">
@@ -175,7 +165,7 @@ const CNavbar = () => {
                   <Dropdown.Divider />
                   <Dropdown.Item href="#action/3.5">Gestisci</Dropdown.Item>
                   <Dropdown.Item href="#action/3.6">
-                    Post e attivitÃ
+                    Post e attività
                   </Dropdown.Item>
                   <Dropdown.Item
                     href="#action/3.7"
