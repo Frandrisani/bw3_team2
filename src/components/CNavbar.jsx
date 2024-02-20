@@ -1,4 +1,3 @@
-import React from "react";
 import {
   Container,
   Navbar,
@@ -24,13 +23,17 @@ import Logo from "/logoIn.png";
 
 const CNavbar = () => {
   return (
-    <Navbar bg="white" expand="lg" className="shadow-sm">
+    <Navbar bg="white" expand="lg" className="shadow-sm fixed-top">
       <Container
         fluid
         style={{
-          paddingLeft: "150px",
-          paddingRight: "80px",
+          paddingLeft: "160px",
+          paddingRight: "100px",
           position: "relative",
+          paddingTop: "0px",
+          paddingBottom: "0px",
+          marginTop: "-2px",
+          marginBottom: "-10px",
         }}
       >
         <Navbar.Brand href="#home">
@@ -44,16 +47,26 @@ const CNavbar = () => {
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Form className="me-3 custom-search-form">
+          <Form className="me-3">
             <InputGroup>
               <FormControl
                 type="search"
                 placeholder="Cerca"
                 aria-label="Cerca"
                 className="border-0 bg-light"
-                style={{ boxShadow: "none" }}
+                style={{ paddingRight: "50px", boxShadow: "none" }}
               />
-              <InputGroup.Text className="bg-transparent border-0">
+              <InputGroup.Text
+                style={{
+                  position: "absolute",
+                  right: "10px",
+                  top: "50%",
+                  transform: "translateY(-50%)",
+                  zIndex: "5",
+                  background: "none",
+                  border: "none",
+                }}
+              >
                 <Search size={20} />
               </InputGroup.Text>
             </InputGroup>
@@ -64,25 +77,25 @@ const CNavbar = () => {
           >
             <Nav.Item style={{ marginLeft: "24px" }}>
               <Nav.Link href="#home">
-                <HouseDoorFill size={24} />
+                <HouseDoorFill size={20} />
                 <div>Home</div>
               </Nav.Link>
             </Nav.Item>
             <Nav.Item style={{ marginLeft: "24px" }}>
               <Nav.Link href="#rete">
-                <PeopleFill size={24} />
+                <PeopleFill size={20} />
                 <div>Rete</div>
               </Nav.Link>
             </Nav.Item>
             <Nav.Item style={{ marginLeft: "24px" }}>
               <Nav.Link href="#lavoro">
-                <SuitcaseFill size={24} />
+                <SuitcaseFill size={20} />
                 <div>Lavoro</div>
               </Nav.Link>
             </Nav.Item>
             <Nav.Item style={{ marginLeft: "24px" }}>
               <Nav.Link href="#messaggi">
-                <ChatDots size={24} />
+                <ChatDots size={20} />
                 <div>Messaggi</div>
               </Nav.Link>
             </Nav.Item>
@@ -90,39 +103,60 @@ const CNavbar = () => {
               <Badge
                 bg="danger"
                 className="position-absolute translate-middle badge-custom"
-                style={{ top: "7px", right: "3px" }}
+                style={{ top: "8px", right: "7px" }}
               >
                 4
               </Badge>{" "}
               <Nav.Link href="#notifiche">
-                <BellFill size={24} />
+                <BellFill size={20} />
                 <div>Notifiche</div>
               </Nav.Link>
             </Nav.Item>
+
             <Nav.Item style={{ marginLeft: "24px" }}>
               <Dropdown align="end">
                 <Dropdown.Toggle
                   variant="transparent"
                   id="dropdown-profile"
-                  style={{ boxShadow: "none" }}
+                  style={{
+                    boxShadow: "none",
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                    padding: "0",
+                    border: "none",
+                    backgroundColor: "transparent",
+                    cursor: "pointer",
+                  }}
                 >
-                  <div
+                  <img
+                    src="/path-to-default-image"
                     style={{
-                      display: "flex",
-                      flexDirection: "column",
-                      alignItems: "center",
+                      width: "34px",
+                      height: "34px",
+                      borderRadius: "50%",
+                      objectFit: "cover",
+                      marginTop: "8px",
                     }}
-                  >
-                    <PersonCircle size={24} />
-                    <div style={{ fontSize: "0.75rem", marginTop: "2px" }}>
-                      Tu
-                    </div>
-                  </div>
+                    alt="Profilo"
+                  />
                 </Dropdown.Toggle>
-                <Dropdown.Menu>
-                  <Dropdown.Item href="#action/3.1">
-                    <strong>Account</strong>
+                <Dropdown.Menu
+                  style={{
+                    maxWidth: "250px",
+                    padding: "0",
+                    whiteSpace: "nowrap",
+                    overflow: "hidden",
+                    textOverflow: "ellipsis",
+                  }}
+                >
+                  <Dropdown.Item
+                    href="#action/3.1"
+                    style={{ fontWeight: "bold" }}
+                  >
+                    Nome - Ruolo
                   </Dropdown.Item>
+                  <Dropdown.Divider />
                   <Dropdown.Item href="#action/3.2">
                     Impostazioni e privacy
                   </Dropdown.Item>
@@ -131,26 +165,51 @@ const CNavbar = () => {
                   <Dropdown.Divider />
                   <Dropdown.Item href="#action/3.5">Gestisci</Dropdown.Item>
                   <Dropdown.Item href="#action/3.6">
-                    Post e attivitÃ
+                    Post e attività
                   </Dropdown.Item>
-                  <Dropdown.Item href="#action/3.7">
+                  <Dropdown.Item
+                    href="#action/3.7"
+                    style={{
+                      whiteSpace: "nowrap",
+                      overflow: "hidden",
+                      textOverflow: "ellipsis",
+                    }}
+                  >
                     Account per la pubblicazione di offerte di lavoro
                   </Dropdown.Item>
                   <Dropdown.Item href="#action/3.8">Esci</Dropdown.Item>
                 </Dropdown.Menu>
               </Dropdown>
             </Nav.Item>
+            {/* Div per la linea di separazione */}
+            <Nav.Item
+              style={{
+                alignSelf: "stretch",
+                width: "1px",
+                backgroundColor: "#dcdcdc",
+                marginTop: "-2px",
+                marginBottom: "5px",
+                marginLeft: "25px",
+                marginRight: "-23px",
+              }}
+            />
+
+            <Nav.Item style={{ marginLeft: "24px" }}>
+              <Dropdown align="end"></Dropdown>
+            </Nav.Item>
+            {/* fine Div per la linea di separazione */}
             <Nav.Item style={{ marginLeft: "24px" }}>
               <Nav.Link href="#altro">
-                <Grid3x3GapFill size={24} />
-                <div>Altro</div>
+                <Grid3x3GapFill size={20} />
+                <div>Per le aziende</div>
               </Nav.Link>
             </Nav.Item>
           </Nav>
           <Nav className="justify-content-end">
             <Nav.Link href="#premium" style={{ paddingRight: "40px" }}>
               <div className="text-primary" style={{ cursor: "pointer" }}>
-                Prova Premium per 0 EUR
+                Prova Premium
+                <br /> per 0 EUR
               </div>
             </Nav.Link>
           </Nav>

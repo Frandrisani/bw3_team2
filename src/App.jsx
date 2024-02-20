@@ -4,7 +4,14 @@ import Profile from "./components/ComponentsProfilPage/Profilo";
 import Aside from "./components/aside";
 
 function App() {
-  return <></>;
+  return (
+    <Router>
+      <div className="App">
+        <ProfilePage />
+        {/* route verranno aggiunti qui più tardi */}
+      </div>
+    </Router>
+  );
 }
 
 export default App;
