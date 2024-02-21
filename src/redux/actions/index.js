@@ -57,11 +57,11 @@ export const getAllProfile = () => {
       );
       if (resp.ok) {
         let fetchedProfile = await resp.json();
-        console.log(fetchedProfile);
         dispatch({
           type: ALL_PROFILE,
           payload: fetchedProfile,
         });
+        console.log(fetchedProfile);
       } else {
         console.log("error");
       }
