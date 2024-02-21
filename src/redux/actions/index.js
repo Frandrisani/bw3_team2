@@ -99,7 +99,6 @@ export const getAllProfile = () => {
           type: ALL_PROFILE,
           payload: fetchedProfile,
         });
-        console.log(fetchedProfile);
       } else {
         console.log("error");
       }
@@ -296,7 +295,7 @@ export const getPosts = () => {
         {
           method: "GET",
           headers: {
-            Authorization: `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWQzMTBjNDI0ZjYwNTAwMTkzN2Q0NGMiLCJpYXQiOjE3MDgzMzEyMDQsImV4cCI6MTcwOTU0MDgwNH0.jQqEZlorW4peoM1Scoy1oN7QuoEpJ1jl5anuqhJhRmk`,
+            Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWQzMTBjNDI0ZjYwNTAwMTkzN2Q0NGMiLCJpYXQiOjE3MDgzMzEyMDQsImV4cCI6MTcwOTU0MDgwNH0.jQqEZlorW4peoM1Scoy1oN7QuoEpJ1jl5anuqhJhRmk`,
             "Content-Type": "application/json",
           },
         }
