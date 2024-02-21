@@ -38,7 +38,7 @@ const Esperienza = () => {
                   <strong>Esperienza</strong>
                 </Card.Title>
               </Col>
-              <Col xs={2}><i class="bi bi-plus-lg"></i> <i class="bi bi-pencil-fill"></i></Col>
+              <Col xs={2}><i className="bi bi-plus-lg"></i> <i className="bi bi-pencil-fill"></i></Col>
             </Row>
             <blockquote className="blockquote mb-0">
               <Row>
