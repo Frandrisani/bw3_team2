@@ -14,7 +14,7 @@ const HomePage = () => {
  
   return (
     <>
-      <CardHome spinner={spinner} array={allPost.filter(((post, index) => post.image && index <=180)   )} />
+      <CardHome spinner={spinner} array={allPost.filter(((post, index) => post.image && index <=80)   )} />
     </>
   );
 };

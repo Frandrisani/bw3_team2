@@ -46,7 +46,7 @@ function App() {
           </Col>
           <Col lg={3}>
             <Routes>
-              <Route path="/aside" element={<Aside />} />
+              <Route path="/" element={<Aside />} />
             </Routes>
           </Col>
         </Row>

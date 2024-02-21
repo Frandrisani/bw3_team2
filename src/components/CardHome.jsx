@@ -11,7 +11,6 @@ function CardHome(prop) {
         <Spinner animation="border" />
       ) : (
         prop.array.map((post, index) => {
-          console.log(post);
           return (
             <Card key={index}>
               <Card.Body>
