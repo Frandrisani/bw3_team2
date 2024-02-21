@@ -1,29 +1,50 @@
 import React from "react";
 import { Button, Navbar } from "react-bootstrap";
 
-const buttonStyle = {
-  backgroundColor: "#ffffff", // Sfondo bianco
-  border: "1px solid #d1d1d1", // Bordo grigio chiaro
-  borderRadius: "20px", // Bordi arrotondati
-  padding: "5px 20px", // Padding interno maggiore
-  margin: "0 5px", // Margine esterno
-  boxShadow: "none", // Nessuna ombra
-  color: "#000", // Colore del testo nero
-  fontWeight: "bold", // Grassetto per il testo
+const buttonStyle1 = {
+  backgroundColor: "#ffffff",
+  color: "#000000",
+  border: "1px solid #d1d1d1",
+  borderRadius: "20px",
+  padding: "5px 15px",
+  margin: "0 5px",
+  boxShadow: "none",
+  fontWeight: "bold",
+};
+
+const buttonStyle2 = {
+  backgroundColor: "#0A66C2",
+  color: "#ffffff",
+  border: "none",
+  borderRadius: "20px",
+  padding: "5px 15px",
+  margin: "0 5px",
+  boxShadow: "none",
+  fontWeight: "bold",
+};
+
+const buttonStyle3 = {
+  backgroundColor: "#ffffff",
+  border: "1px solid #0A66C2",
+  borderRadius: "20px",
+  padding: "5px 20px",
+  margin: "0 5px",
+  boxShadow: "0 2px 4px rgb(0 0 0 / 15%)",
+  fontWeight: "bold",
 };
 
 const ProfileButtons = () => {
   return (
     <div>
-      <Button style={buttonStyle}>Bottone 1</Button>
-      <Button style={buttonStyle}>Bottone 2</Button>
-      <Button style={buttonStyle}>Bottone 3</Button>
+      <Button style={buttonStyle1}>Altro</Button>
+      <Button style={buttonStyle2}>Aggiungi sezione del profilo</Button>
+      <Button style={buttonStyle3}>Disponibile per</Button>
     </div>
   );
 };
 
 const SubNavbarContent = () => {
-  // Hardcoded per ora, ma puoi sostituirlo con le informazioni dinamiche da Redux
+  // Hardcoded per ora, sostituirlo con le informazioni dinamiche da Redux
   const username = "Nome Utente";
   const role = "Informatico";
 
