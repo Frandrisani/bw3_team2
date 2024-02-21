@@ -1,23 +1,3 @@
-// import { Col, Container, Row } from "react-bootstrap";
-// import Interest from "./components/ComponentsProfilPage/Interessi";
-
-// import Aside from "./components/aside";
-// import ProfilePage from "./components/ProfilePage";
-// import { Router } from "react-bootstrap-icons";
-
-// function App() {
-//   return (
-//     <Router>
-//       <div className="App">
-//         <ProfilePage />
-//         {/* route verranno aggiunti qui più tardi */}
-//       </div>
-//     </Router>
-//   );
-// }
-
-// export default App;
-
 import {
   BrowserRouter as Router,
   Routes,
