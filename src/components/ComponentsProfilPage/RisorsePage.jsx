@@ -4,7 +4,10 @@ import { Link } from "react-router-dom";
 const RisorsePage = () => {
   return (
     <Container>
-      <Row className=" justify-content-center mt-4">
+      <Row
+        className=" justify-content-center mt-4"
+        style={{ paddingTop: "3.4rem" }}
+      >
         <div className=" border border-secondary-subtle bg-white rounded-3 w-75 mt-3 mb-3 ps-4">
           <h5 className="mt-4">
             <Link to="/" className="text-decoration-none">

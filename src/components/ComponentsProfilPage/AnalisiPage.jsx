@@ -50,7 +50,10 @@ const AnalisiPage = () => {
   return (
     <>
       <Container>
-        <Row className=" justify-content-center mt-4">
+        <Row
+          className=" justify-content-center mt-4"
+          style={{ paddingTop: "4.4rem" }}
+        >
           <div className=" border border-secondary-subtle bg-white rounded-3 w-75">
             <Row className="ms-3 my-3">
               <Col>
