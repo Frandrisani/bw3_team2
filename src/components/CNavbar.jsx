@@ -36,7 +36,7 @@ const autorizzazioneProfili = {
   simone:
     "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWQzMTBjNDI0ZjYwNTAwMTkzN2Q0NGMiLCJpYXQiOjE3MDgzMzEyMDQsImV4cCI6MTcwOTU0MDgwNH0.jQqEZlorW4peoM1Scoy1oN7QuoEpJ1jl5anuqhJhRmk",
 };
-
+const x = 2;
 const nomiProfilo = ["francesco", "matteo", "giulio", "simone", "valerio"];
 
 const CNavbar = () => {

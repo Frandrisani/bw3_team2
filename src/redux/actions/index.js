@@ -19,7 +19,9 @@ export const getPersonalProfile = (props) => {
         {
           method: "GET",
           headers: {
-            Authorization: `Bearer ${props}`,
+            Authorization: props
+              ? `Bearer ${props}`
+              : `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWQ1ZDE0NmEzM2ZjOTAwMTk2NTgzMjMiLCJpYXQiOjE3MDg1MTE1NTgsImV4cCI6MTcwOTcyMTE1OH0.TDcAuNTbtvUC5JkCpv3vF6DurE3NM4sP3YP-hVFQZcc`,
             "Content-Type": "application/json",
           },
         }
