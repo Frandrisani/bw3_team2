@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Container, Navbar, Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { useDispatch, useSelector } from "react-redux";
+import { getPersonalProfile } from "../../redux/actions/index";
 
 const buttonStyle1 = {
   backgroundColor: "#ffffff",
@@ -46,8 +48,14 @@ const ProfileButtons = () => {
 };
 
 const SubNavbarContent = () => {
-  const username = "Nome Utente";
-  const role = "Informatico";
+  const dispatch = useDispatch();
+  const profilo = useSelector((state) => state.profile.profileDettagli);
+  const spinner = useSelector((state) => state.profile.isLoading);
+
+  useEffect(() => {
+    dispatch(getPersonalProfile());
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <Container>
@@ -62,13 +70,16 @@ const SubNavbarContent = () => {
         <div style={{ display: "flex", alignItems: "center" }}>
           {/*  'path-to-your-image.jpg' da cambiare con percorso immagine */}
           <img
-            src="path-to-your-image.jpg"
+            src={profilo.image}
             alt="Profile"
             style={{ borderRadius: "50%", marginRight: "10px" }}
+            width={40}
           />
           <div>
-            <strong>{username}</strong>
-            <div>{role}</div>
+            <strong>
+              {profilo.name} <span>{profilo.surname}</span>
+            </strong>
+            <div>{profilo.title}</div>
           </div>
         </div>
         <ProfileButtons />
