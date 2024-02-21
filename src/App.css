@@ -1,10 +1,10 @@
 body {
-  background-color: #e8e1d7 !important;
+  background-color: #fffaf0 !important;
 }
 /* FOOTER */
 
 /* ho creato una classe per il css del footer */
-.footer a {
+/* .footer a {
   text-decoration: none;
   color: rgb(52, 52, 52);
 }
@@ -19,4 +19,14 @@ body {
 }
 .btn-custom :hover {
   background-color: #f4f2ee !important;
+} */
+
+.testo-footer {
+  font-weight: 600;
+  opacity: 0.8;
+  font-size: small;
+}
+
+.d-flex {
+  font-weight: 100;
 }

@@ -12,6 +12,7 @@ import CardHome from "./components/CardHome";
 import HomePage from "./components/HomePage";
 import CNavbar from "./components/CNavbar";
 import SottoNavbar from "./components/ComponentsProfilPage/SottoNavbar";
+import FooterHome from "./components/FooterHome";
 
 function App() {
   return (
@@ -20,13 +21,16 @@ function App() {
         <CNavbar />
 
         <Row>
-          <Col lg={8}>
+          <Col lg={6}>
             <Routes>
               <Route path="/" element={<HomePage />} />
               <Route path="/profile" element={<ProfilePage />} />
             </Routes>
           </Col>
-          <Col lg={3}>{<Aside />}</Col>
+          <Col lg={3}>
+            {<Aside />}
+            {<FooterHome />}
+          </Col>
         </Row>
       </Container>
     </BrowserRouter>
