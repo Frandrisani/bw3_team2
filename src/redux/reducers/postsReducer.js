@@ -2,7 +2,7 @@ import { GET_POSTS, TURN_OFF_SPINNER } from "../actions";
 
 const initialState = {
   postsList: [],
-  isLoadign: true,
+  isLoading: true,
 };
 
 const postsReducer = (state = initialState, action) => {
