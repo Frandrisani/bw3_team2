@@ -8,7 +8,7 @@ import {
 } from "../actions";
 
 const initialState = {
-  allExperienceList: null, //* QUI SI SALVANO TUTTE LE ESPERIENZE
+  allExperienceList: [], //* QUI SI SALVANO TUTTE LE ESPERIENZE
   isLoading: true, //* STATO DELLO SPINNER
 };
 

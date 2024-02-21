@@ -28,6 +28,8 @@ import React from "react";
 import ProfilePage from "./components/ProfilePage";
 import Aside from "./components/aside";
 import { Col, Container, Row } from "react-bootstrap";
+import ModEsperienza from "./components/ComponentsProfilPage/ModEsperienza";
+import Esperienza from "./components/ComponentsProfilPage/Esperienza";
 
 function App() {
   return (
@@ -48,7 +50,12 @@ function App() {
           </Col>
         </Row>
       </Container>
+      {/* <Esperienza></Esperienza>  */}
     </BrowserRouter>
+    // <ModEsperienza></ModEsperienza>
+    
+    
+    
   );
 }
 

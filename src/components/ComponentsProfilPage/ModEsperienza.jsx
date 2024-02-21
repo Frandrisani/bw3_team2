@@ -1,7 +1,42 @@
+import React, { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap-icons/font/bootstrap-icons.css";
+import Card from "react-bootstrap/Card";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import { getAllExperience, getPersonalProfile } from "../../redux/actions";
+
+
+
+
+
+
 const ModEsperienza = () => {
     
+  const dispatch = useDispatch();
+  const userId = useSelector((state) => state.profile.profileDettagli?._id);
+  console.log(userId);
+  const allExperience = useSelector((state) => state.allExperienceList);
+
+  useEffect(() => {
+    if (userId) {
+      console.log("Recupero delle esperienze per l'ID utente:", userId);
+      dispatch(getAllExperience(userId));
+    }
+  }, [dispatch, userId]);
+
+  if (!allExperience) {
+    return <div>Loading...</div>;
+  }
+
+
+
     return (
-      <Card>
+      <div>
+
+{allExperience.map((experience) => (
+      <Card key={experience._id}>
       <Card.Body>
         <Row>
           <Col xs={1}>
@@ -32,6 +67,8 @@ const ModEsperienza = () => {
         </blockquote>
       </Card.Body>
     </Card>
+    ))}
+    </div>
     );
   };
   
