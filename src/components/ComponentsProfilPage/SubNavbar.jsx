@@ -1,6 +1,8 @@
 import React from "react";
 import { Button, Navbar } from "react-bootstrap";
-
+import { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getPersonalProfile } from "../redux/actions/index";
 const buttonStyle1 = {
   backgroundColor: "#ffffff",
   color: "#000000",
@@ -44,9 +46,14 @@ const ProfileButtons = () => {
 };
 
 const SubNavbarContent = () => {
-  // Hardcoded per ora, sostituirlo con le informazioni dinamiche da Redux
-  const username = "Nome Utente";
-  const role = "Informatico";
+  const dispatch = useDispatch();
+  const profilo = useSelector((state) => state.profile.profileDettagli);
+  const spinner = useSelector((state) => state.profile.isLoading);
+
+  useEffect(() => {
+    dispatch(getPersonalProfile());
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <div
@@ -59,13 +66,13 @@ const SubNavbarContent = () => {
     >
       <div style={{ display: "flex", alignItems: "center" }}>
         <img
-          src="path-to-your-image.jpg"
+          src={profilo.image}
           alt="Profile"
           style={{ borderRadius: "50%", marginRight: "10px" }}
         />
         <div>
-          <strong>{username}</strong>
-          <div>{role}</div>
+          <strong>{profilo.name}</strong>
+          <div>{profilo.title}</div>
         </div>
       </div>
       <ProfileButtons />
