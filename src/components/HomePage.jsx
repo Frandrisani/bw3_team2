@@ -5,18 +5,16 @@ import CardHome from "./CardHome";
 
 const HomePage = () => {
   const dispatch = useDispatch();
-  const allPost = useSelector((state) => state);
+  const allPost = useSelector((state) => state.postsReducer.postsList);
   const spinner = useSelector((state) => state.postsReducer.isLoading);
   useEffect(() => {
     dispatch(getPosts());
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  {
-    spinner === false ? console.log("test", allPost) : null;
-  }
+ 
   return (
     <>
-      <CardHome />
+      <CardHome spinner={spinner} array={allPost.filter(((post, index) => post.image && index <=80)   )} />
     </>
   );
 };
