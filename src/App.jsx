@@ -38,17 +38,11 @@ function App() {
         <Row>
           <Col lg={8}>
             <Routes>
-              <Route path="/profile" element={<ProfilePage />} />
               <Route path="/" element={<HomePage />} />
-
-              {/* Puoi aggiungere altre rotte qui più tardi */}
+              <Route path="/profile" element={<ProfilePage />} />
             </Routes>
           </Col>
-          <Col lg={3}>
-            <Routes>
-              <Route path="/" element={<Aside />} />
-            </Routes>
-          </Col>
+          <Col lg={3}>{<Aside />}</Col>
         </Row>
       </Container>
     </BrowserRouter>
