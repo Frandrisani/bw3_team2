@@ -30,11 +30,15 @@ import Aside from "./components/aside";
 import { Col, Container, Row } from "react-bootstrap";
 import CardHome from "./components/CardHome";
 import HomePage from "./components/HomePage";
+import CNavbar from "./components/CNavbar";
+import SottoNavbar from "./components/ComponentsProfilPage/SottoNavbar";
 
 function App() {
   return (
     <BrowserRouter>
       <Container>
+        <CNavbar />
+
         <Row>
           <Col lg={8}>
             <Routes>
