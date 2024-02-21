@@ -2,45 +2,12 @@ import React, { useState, useEffect } from "react";
 import { Container, Navbar, Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-const buttonStyle1 = {
-  backgroundColor: "#ffffff",
-  color: "#000000",
-  border: "1px solid #d1d1d1",
-  borderRadius: "20px",
-  padding: "5px 15px",
-  margin: "0 5px",
-  boxShadow: "none",
-  fontWeight: "bold",
-};
-
-const buttonStyle2 = {
-  backgroundColor: "#0A66C2",
-  color: "#ffffff",
-  border: "none",
-  borderRadius: "20px",
-  padding: "5px 15px",
-  margin: "0 5px",
-  boxShadow: "none",
-  fontWeight: "bold",
-};
-
-const buttonStyle3 = {
-  backgroundColor: "#ffffff",
-  color: "#0A66C2",
-  border: "1px solid #0A66C2",
-  borderRadius: "20px",
-  padding: "5px 20px",
-  margin: "0 5px",
-  boxShadow: "0 2px 4px rgb(0 0 0 / 15%)",
-  fontWeight: "bold",
-};
-
 const ProfileButtons = () => {
   return (
     <div>
-      <Button style={buttonStyle1}>Altro</Button>
-      <Button style={buttonStyle2}>Aggiungi sezione del profilo</Button>
-      <Button style={buttonStyle3}>Disponibile per</Button>
+      <Button variant="outline-primary">Bottone 1</Button>
+      <Button variant="outline-secondary">Bottone 2</Button>
+      <Button variant="outline-success">Bottone 3</Button>
     </div>
   );
 };
@@ -97,16 +64,6 @@ const SottoNavbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const navbarStyle = {
-    top: "69px",
-    boxShadow: "0 4px 6px -6px #222",
-    borderTop: "1px solid #d1d1d1",
-    borderBottom: "none",
-    height: "50px",
-    zIndex: 1030,
-    backgroundColor: "#fff",
-  };
-
   return (
     <>
       {showSubnav && (
@@ -114,7 +71,7 @@ const SottoNavbar = () => {
           fixed="top"
           bg="white"
           className="shadow-sm"
-          style={navbarStyle}
+          style={{ top: "56px", height: "50px" }} // Imposta l'altezza desiderata qui
         >
           <Container>
             <SubNavbarContent />
