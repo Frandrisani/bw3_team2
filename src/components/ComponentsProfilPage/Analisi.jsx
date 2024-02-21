@@ -7,7 +7,10 @@ const Analisi = () => {
   return (
     <>
       <Container>
-        <div className=" border border-secondary-subtle bg-white rounded-3 w-75 mt-3  ">
+        <div
+          className=" border border-secondary-subtle bg-white rounded-3 mt-3"
+          style={{ width: "770px", marginLeft: "auto", marginRight: "auto" }}
+        >
           <Row className="ms-3 mt-4">
             <h5 className=" mb-0">Analisi</h5>
             <p className="mb-0">

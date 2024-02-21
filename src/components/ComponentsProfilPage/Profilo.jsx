@@ -28,8 +28,8 @@ const Profile = () => {
       {spinner === false ? (
         <>
           <Container>
-            <Row>
-              <Card className="p-0" style={{ width: 800 }}>
+            <Row className="justify-content-center pt-5 mt-5">
+              <Card className="p-0 ms-1" style={{ width: 770 }}>
                 <Card.Img variant="top" src="https://placekitten.com/900/200" />
                 <img
                   src={profilo.image}

@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap-icons/font/bootstrap-icons.css';
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap-icons/font/bootstrap-icons.css";
 import Card from "react-bootstrap/Card";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -10,11 +10,8 @@ import { getAllExperience, getPersonalProfile } from "../../redux/actions";
 const Esperienza = () => {
   const dispatch = useDispatch();
   const userId = useSelector((state) => state.profile.profileDettagli?._id);
-  console.log(userId)
-  const allExperience = useSelector(
-    (state) => state.allExperienceList
-  );
-
+  console.log(userId);
+  const allExperience = useSelector((state) => state.allExperienceList);
 
   useEffect(() => {
     if (userId) {
@@ -38,7 +35,10 @@ const Esperienza = () => {
                   <strong>Esperienza</strong>
                 </Card.Title>
               </Col>
-              <Col xs={2}><i className="bi bi-plus-lg"></i> <i className="bi bi-pencil-fill"></i></Col>
+              <Col xs={2}>
+                <i className="bi bi-plus-lg"></i>{" "}
+                <i className="bi bi-pencil-fill"></i>
+              </Col>
             </Row>
             <blockquote className="blockquote mb-0">
               <Row>
