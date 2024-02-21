@@ -21,7 +21,8 @@ const Profile = () => {
     dispatch(getPersonalProfile());
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
+  
+  
   return (
     <>
       {spinner === false ? (
