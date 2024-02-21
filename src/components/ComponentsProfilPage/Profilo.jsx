@@ -58,7 +58,7 @@ const Profile = () => {
                   className="rounded-circle z-3 position-absolute bottom-50 ms-3"
                 />
                 <Card.Body>
-                  <div className="d-flex p-0 m-0">
+                  <div className="d-flex p-0 m-0 mt-5">
                     <Card.Text className="me-1 fs-2 fw-semibold p-0 mb-0">
                       {profilo.name}
                     </Card.Text>

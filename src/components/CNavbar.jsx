@@ -7,6 +7,8 @@ import {
   InputGroup,
   Dropdown,
   Badge,
+  Modal,
+  Button,
 } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import {
@@ -24,15 +26,65 @@ import { useDispatch, useSelector } from "react-redux";
 import { getPersonalProfile } from "../redux/actions/index";
 import Logo from "/logoIn.png";
 
+const autorizzazioneProfili = {
+  francesco:
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWQzMTI0NTI0ZjYwNTAwMTkzN2Q0NjEiLCJpYXQiOjE3MDgzMzE1ODksImV4cCI6MTcwOTU0MTE4OX0.OIbDf5IbLrd9Qt2Ew7hAZH_XHDZUZwraExm8Lz_cpK4",
+  matteo:
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWQ1ZDE0NmEzM2ZjOTAwMTk2NTgzMjMiLCJpYXQiOjE3MDg1MTE1NTgsImV4cCI6MTcwOTcyMTE1OH0.TDcAuNTbtvUC5JkCpv3vF6DurE3NM4sP3YP-hVFQZcc",
+  giulio:
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWQzMmIzMjI0ZjYwNTAwMTkzN2Q0N2QiLCJpYXQiOjE3MDg0MjE0NTAsImV4cCI6MTcwOTYzMTA1MH0.A7dfFaLi-Qz3L93JudrRf2DbTJnOnEHvC2GO6ohgF2U",
+  simone:
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWQzMTBjNDI0ZjYwNTAwMTkzN2Q0NGMiLCJpYXQiOjE3MDgzMzEyMDQsImV4cCI6MTcwOTU0MDgwNH0.jQqEZlorW4peoM1Scoy1oN7QuoEpJ1jl5anuqhJhRmk",
+};
+
+const nomiProfilo = ["francesco", "matteo", "giulio", "simone", "valerio"];
+
 const CNavbar = () => {
+  const [show, setShow] = useState(false);
   const dispatch = useDispatch();
   const profilo = useSelector((state) => state.profile.profileDettagli);
   const spinner = useSelector((state) => state.profile.isLoading);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+  const [newProfileName, setNewProfileName] = useState("matteo");
+  const [profileName, setProfileName] = useState("matteo");
+  const [newToken, setNewToken] = useState(
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWQ1ZDE0NmEzM2ZjOTAwMTk2NTgzMjMiLCJpYXQiOjE3MDg1MTE1NTgsImV4cCI6MTcwOTcyMTE1OH0.TDcAuNTbtvUC5JkCpv3vF6DurE3NM4sP3YP-hVFQZcc"
+  );
+
+  const xxx = () => {
+    setNewProfileName(profileName);
+    handleClose();
+  };
 
   useEffect(() => {
-    dispatch(getPersonalProfile());
+    switch (newProfileName) {
+      case "francesco":
+        setNewToken(autorizzazioneProfili.francesco);
+        break;
+      case "matteo":
+        setNewToken(autorizzazioneProfili.matteo);
+        break;
+      case "giulio":
+        setNewToken(autorizzazioneProfili.giulio);
+        break;
+      case "simone":
+        setNewToken(autorizzazioneProfili.simone);
+        break;
+      case "valerio":
+        setNewToken(autorizzazioneProfili.valerio);
+        break;
+      default:
+        setNewToken(autorizzazioneProfili.matteo);
+        break;
+    }
+  }, [newProfileName]);
+
+  useEffect(() => {
+    dispatch(getPersonalProfile(newToken));
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [newToken]);
+
   return (
     <>
       {spinner === true ? (
@@ -202,7 +254,9 @@ const CNavbar = () => {
                       >
                         Account per la pubblicazione di offerte di lavoro
                       </Dropdown.Item>
-                      <Dropdown.Item href="#action/3.8">Esci</Dropdown.Item>
+                      <Dropdown.Item href="#action/3.8" onClick={handleShow}>
+                        Cambia utente
+                      </Dropdown.Item>
                     </Dropdown.Menu>
                   </Dropdown>
                 </Nav.Item>
@@ -242,6 +296,38 @@ const CNavbar = () => {
           </Container>
         </Navbar>
       )}
+
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>
+            {" "}
+            <h5>Cambia Utente</h5>
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body className="pt-0">
+          <p className=" opacity-75 ">* indica che è obbligatorio</p>
+          <Form>
+            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+              <Form.Label className=" opacity-75 ">Username*</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder=""
+                value={profileName}
+                onChange={(e) => setProfileName(e.target.value)}
+              />
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+              <Form.Label className=" opacity-75 ">Password*</Form.Label>
+              <Form.Control type="password" placeholder="" />
+            </Form.Group>
+          </Form>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="primary" onClick={xxx} className=" rounded-5 px-3">
+            Cambia
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </>
   );
 };
