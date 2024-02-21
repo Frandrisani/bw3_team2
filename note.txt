@@ -44,9 +44,22 @@ COMPITI GIORNO 1:
 --aside (parte di destra) ???
 }
 
+----------------
+
 COMPITI GIORNO 2:
 - Perfezionare la sezione Profilo (parte di ProfilePage) --> Aggiungere modale per la modifica informazioni e foto e pulsante per modale
 - Creare Redux per la modifica e l'inserimento delle foto e nuove informazioni
 - Montare tutti i componenti nel ProfilePage e poi nell'App
 - Creare redux per sezione Esperienze dinamica
 - Creare l'asaid di destra 
+
+-------------
+
+GIORNO 3:
+- Fetch Navbar per imagine e fetch per l'immagine e i dati della sottoNavBar (Francesco)
+- Modifiche profilo tramite modale (Francesco)
+- Modifiche esperienze COMPLETO (Giulio)
+- Card post HOMEPAGE (Valerio)
+- Redux per Post HOMEPAGE (Simone)
+- Creare sistema per cambio utente (Matteo)
+- Asaid sinitra HOMEPAGE
