@@ -23,7 +23,7 @@ import Logo from "/logoIn.png";
 
 const CNavbar = () => {
   return (
-    <Navbar bg="white" expand="lg" className="shadow-sm fixed-top">
+    <Navbar bg="white" expand="lg" className="shadow-sm fixed-top mb-5">
       <Container
         fluid
         style={{

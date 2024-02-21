@@ -2,6 +2,7 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import Navbar from "./CNavbar";
+import SottoNavbar from "./ComponentsProfilPage/SottoNavbar";
 import Profile from "./ComponentsProfilPage/Profilo";
 import Analisi from "./ComponentsProfilPage/Analisi";
 import Risorse from "./ComponentsProfilPage/Risorse";
@@ -16,6 +17,7 @@ const ProfilePage = () => {
   return (
     <div>
       <Navbar />
+      <SottoNavbar />
       <Profile />
       <Analisi />
       <Risorse />

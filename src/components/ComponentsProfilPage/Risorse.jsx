@@ -6,7 +6,10 @@ import { Link } from "react-router-dom";
 const Risorse = () => {
   return (
     <Container>
-      <div className=" border border-secondary-subtle bg-white rounded-3 w-75 mt-3 mb-3">
+      <div
+        className=" border border-secondary-subtle bg-white rounded-3  mt-3 mb-3"
+        style={{ width: "770px", marginLeft: "auto", marginRight: "auto" }}
+      >
         <Row className="ms-3 mt-4 ">
           <h5 className="mb-0">Risorse</h5>
           <p className="opacity-75">

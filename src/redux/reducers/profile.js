@@ -1,14 +1,14 @@
-import { PERSONAL_PROLFILE, TURN_OFF_SPINNER, ALL_PROFILE } from "../actions";
+import { PERSONAL_PROFILE, TURN_OFF_SPINNER, ALL_PROFILE } from "../actions";
 
 const initialState = {
-  allProfileList: null, //* QUI SI SALVANO TUTTI I PROFILI
+  allProfileList: [], //* QUI SI SALVANO TUTTI I PROFILI
   profileDettagli: null, //* QUI SI SALVANO I DATI DEL NOSTRO POFILO
   isLoading: true, //* STATO DELLO SPINNER
 };
 
 const profileReducer = (state = initialState, action) => {
   switch (action.type) {
-    case PERSONAL_PROLFILE:
+    case PERSONAL_PROFILE:
       return {
         ...state,
         profileDettagli: action.payload,

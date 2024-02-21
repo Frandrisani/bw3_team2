@@ -14,22 +14,38 @@ const Aside = () => {
     dispatch(getAllProfile());
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  return (
-    <>
-      <UrlLinkdin />
 
-      <>
-        <ProfileConsulted
-          title="Altri profili consultati"
-          array={allProfile.filter((_, index) => index > 2 && index < 8)}
-        />
-        <ProfileConsulted
-          title="Persone che potresti conoscere"
-          array={allProfile.filter((_, index) => index >= 8 && index <= 13)}
-        />
-      </>
-    </>
-  );
+  // Se lo spinner è attivo, mostra il componente Spinner
+  if (spinner) {
+    return <Spinner animation="border" variant="primary" />;
+  } else {
+    return (
+      <div style={{ paddingTop: "6rem" }}>
+        {" "}
+        {/*aggiunti per non sovrapporsi alla Navbar*/}
+        <>
+          <UrlLinkdin />
+
+          <>
+            <ProfileConsulted
+              title="Altri profili consultati"
+              array={
+                allProfile &&
+                allProfile.filter((_, index) => index > 2 && index < 8)
+              }
+            />
+            <ProfileConsulted
+              title="Altri profili consultati"
+              array={
+                allProfile &&
+                allProfile.filter((_, index) => index >= 8 && index <= 13)
+              }
+            />
+          </>
+        </>
+      </div>
+    );
+  }
 };
 
 export default Aside;
