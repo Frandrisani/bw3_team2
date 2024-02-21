@@ -14,6 +14,21 @@ const Aside = () => {
     dispatch(getAllProfile());
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+  {
+    /**/
+  }
+  // Se lo spinner è attivo, mostra il componente Spinner
+  if (spinner) {
+    return <Spinner animation="border" variant="primary" />;
+  }
+  // Verifica se allProfile è null o undefined
+  if (!allProfile) {
+    return <div>Loading...</div>; // o un altro indicatore di caricamento
+  }
+  {
+    /**/
+  }
+
   return (
     <div style={{ paddingTop: "6rem" }}>
       {" "}
