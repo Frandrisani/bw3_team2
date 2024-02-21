@@ -11,10 +11,13 @@ const HomePage = () => {
     dispatch(getPosts());
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
- 
+
   return (
     <>
-      <CardHome spinner={spinner} array={allPost.filter(((post, index) => post.image && index <=80)   )} />
+      <CardHome
+        spinner={spinner}
+        array={allPost.filter((post, index) => post.image && index <= 80)}
+      />
     </>
   );
 };

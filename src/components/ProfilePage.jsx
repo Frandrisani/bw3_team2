@@ -17,8 +17,6 @@ import CFooter from "./CFooter";
 const ProfilePage = () => {
   return (
     <div>
-      <Navbar />
-      <SottoNavbar />
       <Profile />
       <Analisi />
       <Risorse />
