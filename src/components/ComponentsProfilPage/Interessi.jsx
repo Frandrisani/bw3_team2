@@ -1,26 +1,33 @@
-import { Row, Col, Container, Button } from "react-bootstrap";
+import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useState, useEffect } from "react";
 import { getAllProfile } from "../../redux/actions";
-import { Spinner } from "react-bootstrap/esm";
+import { Container, Row, Col, Card, Button, Spinner } from "react-bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const Interest = () => {
   const dispatch = useDispatch();
   const allProfile = useSelector((state) => state.profile.allProfileList);
   const spinner = useSelector((state) => state.profile.isLoading);
+
   useEffect(() => {
     dispatch(getAllProfile());
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-  console.log(allProfile);
+  }, [dispatch]);
+
   return (
     <Container>
-      <Row>
-        <Col className="bg-white">
-          <h1>interessi</h1>
+      <Card
+        className="border border-secondary-subtle bg-white rounded-3 mt-3"
+        style={{ width: "770px", marginLeft: "auto", marginRight: "auto" }}
+      >
+        <Card.Header className="d-flex justify-content-between align-items-center bg-white">
+          <h5>Interessi</h5>
+        </Card.Header>
+        <Card.Body>
           <Row>
-            {spinner === true ? (
-              <Spinner className="border-top" animation="border" />
+            {spinner ? (
+              <Col className="d-flex justify-content-center">
+                <Spinner animation="border" />
+              </Col>
             ) : (
               allProfile
                 .filter((_, index) => index > 2)
@@ -38,21 +45,20 @@ const Interest = () => {
                               height={50}
                             />
                           </div>
-                          <div className="d-flex flex-column align-items-center ">
+                          <div className="d-flex flex-column">
                             <h5>
                               {item.name} {item.surname} - 2°
                             </h5>
-                            <p className="m-0"></p>
                             <span>{item.title}</span>
                             <Button
                               style={{
-                                width: 100,
-                                borderRadius: 50,
-                                marginTop: 10,
+                                width: "100px",
+                                borderRadius: "50px",
+                                marginTop: "10px",
                               }}
                               variant="outline-dark"
                             >
-                              segui gia
+                              Segui già
                             </Button>
                           </div>
                         </div>
@@ -61,9 +67,10 @@ const Interest = () => {
                 )
             )}
           </Row>
-        </Col>
-      </Row>
+        </Card.Body>
+      </Card>
     </Container>
   );
 };
+
 export default Interest;

@@ -15,7 +15,7 @@ const ProfileConsulted = (prop) => {
 
   return (
     <Container>
-      <Row className="bg-white mb-3">
+      <Row className="bg-white mb-3 rounded shadow">
         <h5 className="mt-4">{prop.title}</h5>
         {spinner === true ? (
           <Spinner className="border-top" animation="border" />

@@ -3,7 +3,7 @@ import { Row, Col, Container, Button } from "react-bootstrap";
 const UrlLinkdin = () => {
   return (
     <Container>
-      <Row className="bg-white mb-3 ">
+      <Row className="bg-white mb-3 rounded shadow">
         <Col md={12}>
           <div className="d-flex justify-content-between">
             <h4>Public profile & URL</h4>

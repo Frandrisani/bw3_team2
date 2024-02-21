@@ -7,6 +7,7 @@ import Profile from "./ComponentsProfilPage/Profilo";
 import Analisi from "./ComponentsProfilPage/Analisi";
 import Risorse from "./ComponentsProfilPage/Risorse";
 import Informazioni from "./ComponentsProfilPage/Informazioni";
+//import Esperienza from "./ComponentsProfilPage/Esperienza";
 import Formazione from "./ComponentsProfilPage/Formazione";
 import Competenze from "./ComponentsProfilPage/Competenze";
 import Lingue from "./ComponentsProfilPage/Lingue";
@@ -22,6 +23,7 @@ const ProfilePage = () => {
       <Analisi />
       <Risorse />
       <Informazioni />
+      {/*<Esperienza />*/}
       <Formazione />
       <Competenze />
       <Lingue />

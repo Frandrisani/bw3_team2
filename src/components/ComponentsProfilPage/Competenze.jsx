@@ -1,6 +1,6 @@
 import React from "react";
 import { Card, ListGroup, Button, Container, Row, Col } from "react-bootstrap";
-import { PlusLg, Pencil } from "react-bootstrap-icons";
+import { PlusLg, Pencil, ArrowRight } from "react-bootstrap-icons";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const Competenze = () => {
@@ -38,12 +38,12 @@ const Competenze = () => {
                 </ListGroup.Item>
               ))}
             </ListGroup>
-            <Card.Footer className="bg-white">
+            <Card.Footer className="bg-white d-flex justify-content-center align-items-center">
               <Button
                 variant="link"
                 className="text-black text-decoration-none"
               >
-                Mostra tutte le competenze (9)
+                Mostra tutte le competenze (9) <ArrowRight className="ms-2" />
               </Button>
             </Card.Footer>
           </Col>

@@ -163,6 +163,7 @@ const CNavbar = () => {
                         whiteSpace: "nowrap",
                         overflow: "hidden",
                         textOverflow: "ellipsis",
+                        zIndex: 9999,
                       }}
                     >
                       <Dropdown.Item href="#action/3.1">

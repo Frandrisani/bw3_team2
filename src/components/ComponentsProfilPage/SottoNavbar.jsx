@@ -114,7 +114,7 @@ const SottoNavbar = () => {
     borderTop: "1px solid #d1d1d1",
     borderBottom: "none",
     height: "50px",
-    zIndex: 1030,
+    zIndex: 999,
     backgroundColor: "#fff",
   };
 
