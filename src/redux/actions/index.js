@@ -6,7 +6,8 @@ export const SINGLE_EXPERIENCE = "SINGLE_EXPERIENCE"; //* PER LE SINGOLE ESPERIE
 export const ADD_EXPERIENCE = "ADD_EXPERIENCE"; //* PER INSERIRE LE NUOVE ESPERIENZE
 export const UPDATE_EXPERIENCE = "UPDATE_EXPERIENCE"; //* PER AGGIORNARE LE ESPERIENZE
 export const DELETE_EXPERIENCE = "DELETE_EXPERIENCE"; //* PER ELIMINARE LE ESPERIENZE
-export const SET_USER_ID = 'SET_USER_ID'
+export const SET_USER_ID = "SET_USER_ID";
+
 //* FETCH DATI PROFILO PERSONALE -->  Qui in base al token che inseriamo ci restituisce gli elementi del nostro profilo
 export const getPersonalProfile = () => {
   return async (dispatch, getState) => {
@@ -23,7 +24,7 @@ export const getPersonalProfile = () => {
       );
       if (resp.ok) {
         let fetchedPersonalProfile = await resp.json();
-       
+
         dispatch({
           type: PERSONAL_PROFILE,
           payload: fetchedPersonalProfile,
@@ -90,7 +91,7 @@ export const getSingleExperience = (id, expId) => {
       );
       if (resp.ok) {
         let singleExperience = await resp.json();
-       
+
         dispatch({
           type: SINGLE_EXPERIENCE,
           payload: singleExperience,
@@ -123,7 +124,7 @@ export const getAllExperience = (id) => {
       );
       if (resp.ok) {
         let allExperience = await resp.json();
-       
+
         dispatch({
           type: ALL_EXPERIENCE,
           payload: allExperience,
@@ -156,7 +157,7 @@ export const addExperience = (id) => {
       );
       if (resp.ok) {
         let addExperience = await resp.json();
-       
+
         dispatch({
           type: ADD_EXPERIENCE,
           payload: addExperience,
@@ -189,7 +190,7 @@ export const updateExperience = (id, expId) => {
       );
       if (resp.ok) {
         let updateExperience = await resp.json();
-       
+
         dispatch({
           type: UPDATE_EXPERIENCE,
           payload: updateExperience,
@@ -222,7 +223,7 @@ export const deleteExperience = (id, expId) => {
       );
       if (resp.ok) {
         let deleteExperience = await resp.json();
-       
+
         dispatch({
           type: DELETE_EXPERIENCE,
           payload: deleteExperience,
