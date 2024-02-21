@@ -62,4 +62,4 @@ GIORNO 3:
 - Card post HOMEPAGE (Valerio)
 - Redux per Post HOMEPAGE (Simone)
 - Creare sistema per cambio utente (Matteo)
-- Asaid sinitra HOMEPAGE
+- Asaid sinitra HOMEPAGE (simone)

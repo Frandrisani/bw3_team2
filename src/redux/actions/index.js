@@ -8,6 +8,7 @@ export const ADD_EXPERIENCE = "ADD_EXPERIENCE"; //* PER INSERIRE LE NUOVE ESPERI
 export const UPDATE_EXPERIENCE = "UPDATE_EXPERIENCE"; //* PER AGGIORNARE LE ESPERIENZE
 export const DELETE_EXPERIENCE = "DELETE_EXPERIENCE"; //* PER ELIMINARE LE ESPERIENZE
 export const SET_USER_ID = "SET_USER_ID";
+export const GET_POSTS = "GET_POSTS"; // Aggiunto per i post della homepage
 
 //* FETCH DATI PROFILO PERSONALE -->  Qui in base al token che inseriamo ci restituisce gli elementi del nostro profilo
 export const getPersonalProfile = () => {
@@ -285,3 +286,36 @@ export const setUserId = (userId) => ({
   type: SET_USER_ID,
   payload: userId,
 });
+
+// FETCH PER L'HOMEPAGE:
+export const getPosts = () => {
+  return async (dispatch, getState) => {
+    try {
+      let resp = await fetch(
+        "https://striveschool-api.herokuapp.com/api/posts/",
+        {
+          method: "GET",
+          headers: {
+            Authorization: `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWQzMTBjNDI0ZjYwNTAwMTkzN2Q0NGMiLCJpYXQiOjE3MDgzMzEyMDQsImV4cCI6MTcwOTU0MDgwNH0.jQqEZlorW4peoM1Scoy1oN7QuoEpJ1jl5anuqhJhRmk`,
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      if (resp.ok) {
+        let posts = await resp.json();
+        dispatch({
+          type: GET_POSTS,
+          payload: posts,
+        });
+      } else {
+        console.log("Errore durante il fetch dei post");
+      }
+    } catch (error) {
+      console.log(error);
+    } finally {
+      dispatch({
+        type: TURN_OFF_SPINNER,
+      });
+    }
+  };
+};
