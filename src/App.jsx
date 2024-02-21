@@ -28,6 +28,8 @@ import React from "react";
 import ProfilePage from "./components/ProfilePage";
 import Aside from "./components/aside";
 import { Col, Container, Row } from "react-bootstrap";
+import CardHome from "./components/CardHome";
+import HomePage from "./components/HomePage";
 
 function App() {
   return (
@@ -36,7 +38,8 @@ function App() {
         <Row>
           <Col lg={8}>
             <Routes>
-              <Route path="/" element={<ProfilePage />} />
+              <Route path="/profile" element={<ProfilePage />} />
+              <Route path="/" element={<HomePage />} />
 
               {/* Puoi aggiungere altre rotte qui più tardi */}
             </Routes>
