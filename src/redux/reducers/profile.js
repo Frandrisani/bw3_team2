@@ -1,4 +1,9 @@
-import { PERSONAL_PROFILE, TURN_OFF_SPINNER, ALL_PROFILE } from "../actions";
+import {
+  PERSONAL_PROFILE,
+  TURN_OFF_SPINNER,
+  ALL_PROFILE,
+  PERSONAL_PROFILE_MODIFIED,
+} from "../actions";
 
 const initialState = {
   allProfileList: [], //* QUI SI SALVANO TUTTI I PROFILI
@@ -23,6 +28,11 @@ const profileReducer = (state = initialState, action) => {
       return {
         ...state,
         allProfileList: action.payload,
+      };
+    case PERSONAL_PROFILE_MODIFIED:
+      return {
+        ...state,
+        profileDettagli: action.payload,
       };
 
     default:

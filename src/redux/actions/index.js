@@ -1,5 +1,6 @@
 export const TURN_OFF_SPINNER = "TURN_OFF_SPINNER"; //* PER LO SPINNER PRE-CARICAMENTO FETCH
 export const PERSONAL_PROFILE = "PERSONAL_PROFILE"; //* PER IL NOSTRO PROFILO
+export const PERSONAL_PROFILE_MODIFIED = "PERSONAL_PROFILE_MODIFIED"; //* PER IL NOSTRO PROFILO
 export const ALL_PROFILE = "ALL_PROFILE"; //* PER TUTTI I PROFILI
 export const ALL_EXPERIENCE = "ALL_EXPERIENCE"; //* PER TUTTE LE ESPERIENZE
 export const SINGLE_EXPERIENCE = "SINGLE_EXPERIENCE"; //* PER LE SINGOLE ESPERIENZE
@@ -31,6 +32,41 @@ export const getPersonalProfile = () => {
         });
       } else {
         console.log("error");
+      }
+    } catch (error) {
+      console.log(error);
+    } finally {
+      dispatch({
+        type: TURN_OFF_SPINNER,
+      });
+    }
+  };
+};
+
+//* FETCH DI MODIFICA DATI PROFILO PERSONALE (PUT)-->  Qui in base al token che inseriamo ci restituisce gli elementi del nostro profilo
+export const putPersonalProfile = (updatedProfileData) => {
+  return async (dispatch, getState) => {
+    try {
+      let resp = await fetch(
+        "https://striveschool-api.herokuapp.com/api/profile",
+        {
+          method: "PUT",
+          headers: {
+            Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWQzMTI0NTI0ZjYwNTAwMTkzN2Q0NjEiLCJpYXQiOjE3MDgzMzE1ODksImV4cCI6MTcwOTU0MTE4OX0.OIbDf5IbLrd9Qt2Ew7hAZH_XHDZUZwraExm8Lz_cpK4`,
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(updatedProfileData), // Invia i dati aggiornati al server
+        }
+      );
+      if (resp.ok) {
+        let fetchedPersonalProfile = await resp.json();
+
+        dispatch({
+          type: PERSONAL_PROFILE_MODIFIED,
+          payload: fetchedPersonalProfile,
+        });
+      } else {
+        console.log("Errore durante l'aggiornamento del profilo");
       }
     } catch (error) {
       console.log(error);

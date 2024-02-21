@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getPersonalProfile } from "../../redux/actions/index";
+import { putPersonalProfile } from "../../redux/actions/index";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import Card from "react-bootstrap/Card";
@@ -14,6 +15,14 @@ const Profile = () => {
   const spinner = useSelector((state) => state.profile.isLoading);
   const [show, setShow] = useState(false);
 
+  const [updatedProfileData, setUpdatedProfileData] = useState({
+    name: "",
+    surname: "",
+    title: "",
+    bio: "",
+    area: "",
+  });
+
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
@@ -21,8 +30,19 @@ const Profile = () => {
     dispatch(getPersonalProfile());
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  
-  
+
+  // Funzione per gestire le modifiche ai campi del profilo nel modale
+  const handleProfileChange = (e) => {
+    const { name, value } = e.target;
+    setUpdatedProfileData((prevData) => ({ ...prevData, [name]: value }));
+  };
+
+  // Funzione per gestire il salvataggio delle modifiche
+  const handleSaveChanges = () => {
+    dispatch(putPersonalProfile(updatedProfileData));
+    handleClose(); // Chiudi il modale dopo il salvataggio
+  };
+
   return (
     <>
       {spinner === false ? (
@@ -104,23 +124,39 @@ const Profile = () => {
                   controlId="exampleForm.ControlInput1"
                 >
                   <Form.Label className=" opacity-75 ">Nome*</Form.Label>
-                  <Form.Control type="text" placeholder="" />
+                  <Form.Control
+                    type="text"
+                    placeholder=""
+                    name="name"
+                    value={updatedProfileData.name}
+                    onChange={handleProfileChange}
+                  />
                 </Form.Group>
                 <Form.Group
                   className="mb-3"
                   controlId="exampleForm.ControlInput1"
                 >
                   <Form.Label className=" opacity-75 ">Cognome*</Form.Label>
-                  <Form.Control type="text" placeholder="" />
+                  <Form.Control
+                    type="text"
+                    placeholder=""
+                    name="surname"
+                    value={updatedProfileData.surname}
+                    onChange={handleProfileChange}
+                  />
                 </Form.Group>
                 <Form.Group
                   className="mb-3"
                   controlId="exampleForm.ControlInput1"
                 >
-                  <Form.Label className=" opacity-75 ">
-                    Nome aggiuntivo
-                  </Form.Label>
-                  <Form.Control type="text" placeholder="" />
+                  <Form.Label className=" opacity-75 ">Titolo</Form.Label>
+                  <Form.Control
+                    type="text"
+                    placeholder=""
+                    name="title"
+                    value={updatedProfileData.title}
+                    onChange={handleProfileChange}
+                  />
                 </Form.Group>
               </Form>
               <p className="mb-0">Pronuncia del nome</p>
@@ -152,8 +188,14 @@ const Profile = () => {
                   className="mb-3"
                   controlId="exampleForm.ControlInput1"
                 >
-                  <Form.Label className=" opacity-75 ">Sommario*</Form.Label>
-                  <Form.Control type="text" placeholder="" />
+                  <Form.Label className=" opacity-75 ">Bio*</Form.Label>
+                  <Form.Control
+                    type="text"
+                    placeholder=""
+                    name="bio"
+                    value={updatedProfileData.bio}
+                    onChange={handleProfileChange}
+                  />
                 </Form.Group>
               </Form>
               <h5>Posizione attuale</h5>
@@ -205,7 +247,13 @@ const Profile = () => {
                   <Form.Label className=" opacity-75 ">
                     Paese/Area geografica*
                   </Form.Label>
-                  <Form.Control type="text" placeholder="" />
+                  <Form.Control
+                    type="text"
+                    placeholder=""
+                    name="area"
+                    value={updatedProfileData.area}
+                    onChange={handleProfileChange}
+                  />
                 </Form.Group>
                 <Form.Group
                   className="mb-3"
@@ -233,7 +281,7 @@ const Profile = () => {
             <Modal.Footer>
               <Button
                 variant="primary"
-                onClick={handleClose}
+                onClick={handleSaveChanges}
                 className=" rounded-5 px-3"
               >
                 Salva
