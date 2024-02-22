@@ -9,6 +9,9 @@ export const UPDATE_EXPERIENCE = "UPDATE_EXPERIENCE"; //* PER AGGIORNARE LE ESPE
 export const DELETE_EXPERIENCE = "DELETE_EXPERIENCE"; //* PER ELIMINARE LE ESPERIENZE
 export const SET_USER_ID = "SET_USER_ID";
 export const GET_POSTS = "GET_POSTS"; // Aggiunto per i post della homepage
+export const FETCH_JOBS_START = "FETCH_JOBS_START";
+export const FETCH_JOBS_SUCCESS = "FETCH_JOBS_SUCCESS";
+export const FETCH_JOBS_FAILURE = "FETCH_JOBS_FAILURE";
 
 //* FETCH DATI PROFILO PERSONALE -->  Qui in base al token che inseriamo ci restituisce gli elementi del nostro profilo
 export const getPersonalProfile = (props) => {
@@ -317,6 +320,74 @@ export const getPosts = () => {
       dispatch({
         type: TURN_OFF_SPINNER,
       });
+    }
+  };
+};
+
+// Azione per iniziare il fetch dei lavori
+export const fetchJobsStart = () => ({
+  type: FETCH_JOBS_START,
+});
+
+// Azione per gestire il successo del fetch dei lavori
+export const fetchJobsSuccess = (jobs) => ({
+  type: FETCH_JOBS_SUCCESS,
+  payload: jobs,
+});
+
+// Azione per gestire il fallimento del fetch dei lavori
+export const fetchJobsFailure = (error) => ({
+  type: FETCH_JOBS_FAILURE,
+  payload: error,
+});
+
+// Funzione per effettuare il fetch generale dei lavori o per query
+export const fetchJobsGeneral = (query = "") => {
+  return async (dispatch) => {
+    dispatch(fetchJobsStart());
+    try {
+      let url = `https://strive-benchmark.herokuapp.com/api/jobs`;
+      if (query) {
+        url += `?search=${query}`;
+      }
+      const response = await fetch(url);
+      if (!response.ok) throw new Error("Network response was not ok");
+      const data = await response.json();
+      dispatch(fetchJobsSuccess(data));
+    } catch (error) {
+      dispatch(fetchJobsFailure(error.toString()));
+    }
+  };
+};
+
+// Funzione per effettuare il fetch dei lavori per azienda
+export const fetchJobsByCompany = (company) => {
+  return async (dispatch) => {
+    dispatch(fetchJobsStart());
+    try {
+      const url = `https://strive-benchmark.herokuapp.com/api/jobs?company=${company}`;
+      const response = await fetch(url);
+      if (!response.ok) throw new Error("Network response was not ok");
+      const data = await response.json();
+      dispatch(fetchJobsSuccess(data));
+    } catch (error) {
+      dispatch(fetchJobsFailure(error.toString()));
+    }
+  };
+};
+
+// Funzione per effettuare il fetch dei lavori per categoria
+export const fetchJobsByCategory = (category, limit = 10) => {
+  return async (dispatch) => {
+    dispatch(fetchJobsStart());
+    try {
+      const url = `https://strive-benchmark.herokuapp.com/api/jobs?category=${category}&limit=${limit}`;
+      const response = await fetch(url);
+      if (!response.ok) throw new Error("Network response was not ok");
+      const data = await response.json();
+      dispatch(fetchJobsSuccess(data));
+    } catch (error) {
+      dispatch(fetchJobsFailure(error.toString()));
     }
   };
 };
