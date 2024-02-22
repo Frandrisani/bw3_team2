@@ -52,6 +52,7 @@ const SubNavbarContent = () => {
 
   useEffect(() => {
     dispatch(getPersonalProfile());
+    console.log(profilo);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
