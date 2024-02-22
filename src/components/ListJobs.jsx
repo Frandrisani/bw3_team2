@@ -1,21 +1,13 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchJobsByCategory } from "../redux/actions";
+import { getCategorysJobs } from "../redux/actions";
 import { ListGroup } from "react-bootstrap";
-import PropTypes from "prop-types";
 
-const Listjobs = ({ category }) => {
+const Listjobs = (props) => {
   const dispatch = useDispatch();
   const jobs = useSelector((state) => state.jobsList);
   const loading = useSelector((state) => state.loading);
   const error = useSelector((state) => state.error);
-
-  useEffect(() => {
-    if (category) {
-      dispatch(fetchJobsByCategory(category));
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [category, dispatch]);
 
   return (
     <>
@@ -34,7 +26,4 @@ const Listjobs = ({ category }) => {
   );
 };
 
-Listjobs.propTypes = {
-  category: PropTypes.string.isRequired,
-};
 export default Listjobs;
