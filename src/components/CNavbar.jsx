@@ -155,7 +155,7 @@ const CNavbar = () => {
                     <div>Rete</div>
                   </Nav.Link>
                 </Nav.Item>
-                <Link to="/Lavoro">
+                <Link to="/Lavoro" className="text-decoration-none">
                   <Nav.Item style={{ marginLeft: "24px" }}>
                     <Nav.Link href="#lavoro">
                       <SuitcaseFill size={20} />

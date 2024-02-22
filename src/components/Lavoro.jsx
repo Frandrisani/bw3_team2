@@ -5,7 +5,7 @@ const Lavoro = () => {
   return (
     <>
       <Container fluid>
-        <Row className="justify-content-center">
+        <Row className=" justify-content-evenly ">
           <Col lg={3}>
             <Row className="mt-3">
               <Col className="border border-secondary-subtle bg-white rounded-3">
@@ -45,15 +45,13 @@ const Lavoro = () => {
 
           <Col
             lg={6}
-            className="border border-secondary-subtle bg-white rounded-3 text-center "
+            className="border border-secondary-subtle bg-white rounded-3 text-center mt-3 "
           >
             <h1>Consigliato per te</h1>
             <p>Sulla base del tuo profilo di ricerca</p>
           </Col>
-          <Col lg={3}></Col>
         </Row>
       </Container>
-      <FooterHome />
     </>
   );
 };
