@@ -362,12 +362,11 @@ export const fetchJobsGeneral = (query = "") => {
 };
 
 // Funzione per effettuare il fetch dei lavori per azienda
-export const fetchJobsByCompany = () => {
+export const fetchJobsByCompany = (company) => {
   return async (dispatch) => {
     dispatch(fetchJobsStart());
     try {
-      // const url = `https://strive-benchmark.herokuapp.com/api/jobs?company=${company}`;
-      const url = `https://strive-benchmark.herokuapp.com/api/jobs?company=Olla`;
+      const url = `https://strive-benchmark.herokuapp.com/api/jobs?company=${company}`;
       const response = await fetch(url);
       if (!response.ok) throw new Error("Network response was not ok");
       const data = await response.json();
@@ -380,12 +379,11 @@ export const fetchJobsByCompany = () => {
 };
 
 // Funzione per effettuare il fetch dei lavori per categoria
-export const fetchJobsByCategory = () => {
+export const fetchJobsByCategory = (category) => {
   return async (dispatch) => {
     dispatch(fetchJobsStart());
     try {
-      // const url = `https://strive-benchmark.herokuapp.com/api/jobs?category=${category}&limit=${limit}`;
-      const url = `https://strive-benchmark.herokuapp.com/api/jobs?category=Marketing&limit=5`;
+      const url = `https://strive-benchmark.herokuapp.com/api/jobs?category=${category}&limit=5`;
 
       const response = await fetch(url);
       if (!response.ok) throw new Error("Network response was not ok");

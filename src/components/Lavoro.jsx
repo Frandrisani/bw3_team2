@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { Button, Col, Container, ListGroup, Row } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchJobsByCategory } from "../redux/actions";
+import Listjobs from "./ListJobs";
 
 const Lavoro = () => {
   const dispatch = useDispatch();
@@ -61,11 +62,7 @@ const Lavoro = () => {
             </p>
             <hr />
             <h5>FRONT-END</h5>
-            <ListGroup as="ol" numbered>
-              <ListGroup.Item as="li">Cras justo odio</ListGroup.Item>
-              <ListGroup.Item as="li">Cras justo odio</ListGroup.Item>
-              <ListGroup.Item as="li">Cras justo odio</ListGroup.Item>
-            </ListGroup>
+            <Listjobs category="Marketing" />
           </Col>
         </Row>
       </Container>
