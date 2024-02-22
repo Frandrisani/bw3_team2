@@ -1,20 +1,11 @@
-import { useEffect } from "react";
 import { Button, Col, Container, ListGroup, Row } from "react-bootstrap";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchJobsByCategory } from "../redux/actions";
 import Listjobs from "./ListJobs";
 
 const Lavoro = () => {
-  const dispatch = useDispatch();
-  //   const jobs = useSelector((state) => state.jobsReducer.jobsList);
-  useEffect(() => {
-    dispatch(fetchJobsByCategory());
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
   return (
     <>
       <Container fluid>
-        <Row className=" justify-content-evenly ">
+        <Row className=" justify-content-evenly pt-5 mt-5">
           <Col lg={3}>
             <Row className="mt-3">
               <Col className="border border-secondary-subtle bg-white rounded-3">

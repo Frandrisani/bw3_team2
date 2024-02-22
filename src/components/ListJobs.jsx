@@ -1,40 +1,43 @@
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchJobsByCategory } from "../redux/actions";
 import { ListGroup } from "react-bootstrap";
 import PropTypes from "prop-types";
 
-const Listjobs = ({ category }) => {
+const ListJobs = ({ category }) => {
   const dispatch = useDispatch();
-  const jobs = useSelector((state) => state.jobsList);
-  const loading = useSelector((state) => state.loading);
-  const error = useSelector((state) => state.error);
+  const jobsData = useSelector((state) => state.jobs.jobsList);
+  const isLoading = useSelector((state) => state.jobs.isLoading);
+  const error = useSelector((state) => state.jobs.error);
 
   useEffect(() => {
-    if (category) {
-      dispatch(fetchJobsByCategory(category));
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [category, dispatch]);
+    dispatch(fetchJobsByCategory(category));
+  }, [dispatch, category]);
+
+  const jobs = jobsData?.data || [];
 
   return (
-    <>
-      {loading && <p>Loading...</p>}
+    <div>
+      {isLoading && <p>Loading...</p>}
       {error && <p>Error: {error}</p>}
-      {jobs && (
-        <ListGroup>
-          {jobs.map((job) => (
-            <ListGroup.Item key={job.id}>
-              <h1>{job.title}</h1>
-            </ListGroup.Item>
-          ))}
-        </ListGroup>
-      )}
-    </>
+      <ListGroup>
+        {jobs.map((job) => (
+          <ListGroup.Item key={job._id}>
+            <h5>{job.title}</h5>
+            <p>{job.company_name}</p>
+            <p>{job.job_type}</p>
+            <p>{job.publication_date}</p>
+
+            {/* Aggiungi altri dettagli delle offerte di lavoro secondo necessità */}
+          </ListGroup.Item>
+        ))}
+      </ListGroup>
+    </div>
   );
 };
 
-Listjobs.propTypes = {
+ListJobs.propTypes = {
   category: PropTypes.string.isRequired,
 };
-export default Listjobs;
+
+export default ListJobs;
