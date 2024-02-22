@@ -144,10 +144,10 @@ const CNavbar = () => {
                 style={{ flexGrow: 1 }}
               >
                 <Nav.Item style={{ marginLeft: "24px" }}>
-                  <Nav.Link href="#home">
+                  <Link to="/" className="nav-link">
                     <HouseDoorFill size={20} />
                     <div>Home</div>
-                  </Nav.Link>
+                  </Link>
                 </Nav.Item>
                 <Nav.Item style={{ marginLeft: "24px" }}>
                   <Nav.Link href="#rete">
@@ -221,7 +221,7 @@ const CNavbar = () => {
                         zIndex: 9999,
                       }}
                     >
-                      <Dropdown.Item href="#action/3.1">
+                      <Dropdown.Item href="/profile">
                         <div className="d-flex">
                           <img
                             src={profilo.image}

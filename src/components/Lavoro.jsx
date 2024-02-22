@@ -11,7 +11,7 @@ const Lavoro = () => {
         <p>Loding..</p>
       ) : (
         <Container fluid>
-          <Row className=" justify-content-evenly ">
+          <Row className=" justify-content-evenly mt-5 pt-5">
             <Col lg={3}>
               <Row className="mt-3">
                 <Col className="border border-secondary-subtle bg-white rounded-3">

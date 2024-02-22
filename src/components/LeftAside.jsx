@@ -1,8 +1,10 @@
 import React from "react";
 import { Card, ListGroup } from "react-bootstrap";
 import "bootstrap-icons/font/bootstrap-icons.css";
+import { useSelector } from "react-redux";
 
 const LeftAside = () => {
+  const profilo = useSelector((state) => state.profile.profileDettagli);
   return (
     <Card
       style={{
@@ -22,8 +24,8 @@ const LeftAside = () => {
         }}
       />
       <Card.Body style={{ textAlign: "center" }}>
-        <Card.Title>Nome Utente</Card.Title>
-        <Card.Text>Ruolo</Card.Text>
+        <Card.Title>{profilo.name}</Card.Title>
+        <Card.Text>{profilo.title}</Card.Text>
       </Card.Body>
       <ListGroup variant="flush">
         <ListGroup.Item
