@@ -353,6 +353,7 @@ export const fetchJobsGeneral = (query = "") => {
       const response = await fetch(url);
       if (!response.ok) throw new Error("Network response was not ok");
       const data = await response.json();
+      console.log(data);
       dispatch(fetchJobsSuccess(data));
     } catch (error) {
       dispatch(fetchJobsFailure(error.toString()));
@@ -361,14 +362,16 @@ export const fetchJobsGeneral = (query = "") => {
 };
 
 // Funzione per effettuare il fetch dei lavori per azienda
-export const fetchJobsByCompany = (company) => {
+export const fetchJobsByCompany = () => {
   return async (dispatch) => {
     dispatch(fetchJobsStart());
     try {
-      const url = `https://strive-benchmark.herokuapp.com/api/jobs?company=${company}`;
+      // const url = `https://strive-benchmark.herokuapp.com/api/jobs?company=${company}`;
+      const url = `https://strive-benchmark.herokuapp.com/api/jobs?company=Olla`;
       const response = await fetch(url);
       if (!response.ok) throw new Error("Network response was not ok");
       const data = await response.json();
+      console.log(data);
       dispatch(fetchJobsSuccess(data));
     } catch (error) {
       dispatch(fetchJobsFailure(error.toString()));
@@ -377,14 +380,17 @@ export const fetchJobsByCompany = (company) => {
 };
 
 // Funzione per effettuare il fetch dei lavori per categoria
-export const fetchJobsByCategory = (category, limit = 10) => {
+export const fetchJobsByCategory = () => {
   return async (dispatch) => {
     dispatch(fetchJobsStart());
     try {
-      const url = `https://strive-benchmark.herokuapp.com/api/jobs?category=${category}&limit=${limit}`;
+      // const url = `https://strive-benchmark.herokuapp.com/api/jobs?category=${category}&limit=${limit}`;
+      const url = `https://strive-benchmark.herokuapp.com/api/jobs?category=Marketing&limit=5`;
+
       const response = await fetch(url);
       if (!response.ok) throw new Error("Network response was not ok");
       const data = await response.json();
+      console.log(data);
       dispatch(fetchJobsSuccess(data));
     } catch (error) {
       dispatch(fetchJobsFailure(error.toString()));

@@ -1,8 +1,15 @@
-import { Button, Col, Container, Row } from "react-bootstrap";
+import { useEffect } from "react";
+import { Button, Col, Container, ListGroup, Row } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
+import { fetchJobsByCategory } from "../redux/actions";
 
 const Lavoro = () => {
   const dispatch = useDispatch();
+  //   const jobs = useSelector((state) => state.jobsReducer.jobsList);
+  useEffect(() => {
+    dispatch(fetchJobsByCategory());
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   return (
     <>
       <Container fluid>
@@ -52,6 +59,13 @@ const Lavoro = () => {
             <p className="small ">
               Sulla base del tuo profilo e della tua cronologia delle ricerche
             </p>
+            <hr />
+            <h5>FRONT-END</h5>
+            <ListGroup as="ol" numbered>
+              <ListGroup.Item as="li">Cras justo odio</ListGroup.Item>
+              <ListGroup.Item as="li">Cras justo odio</ListGroup.Item>
+              <ListGroup.Item as="li">Cras justo odio</ListGroup.Item>
+            </ListGroup>
           </Col>
         </Row>
       </Container>
