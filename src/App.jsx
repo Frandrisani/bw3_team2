@@ -39,24 +39,18 @@ function App() {
           <Col lg={8}>
             <Routes>
               <Route path="/" element={<ProfilePage />} />
-
-              {/* Puoi aggiungere altre rotte qui più tardi */}
+              <Route path="/modEsperienza/:userId/:experienceId" element={<ModEsperienza />} />
+              {/* Altre rotte possono essere aggiunte qui */}
             </Routes>
           </Col>
           <Col lg={3}>
-            <Routes>
-              <Route path="/" element={<Aside />} />
-            </Routes>
+            {/* <Aside /> */}
           </Col>
         </Row>
       </Container>
-      {/* <Esperienza></Esperienza>  */}
     </BrowserRouter>
-    // <ModEsperienza></ModEsperienza>
-    
-    
-    
   );
 }
+
 
 export default App;

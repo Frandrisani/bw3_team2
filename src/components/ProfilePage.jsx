@@ -12,6 +12,7 @@ import Competenze from "./ComponentsProfilPage/Competenze";
 import Lingue from "./ComponentsProfilPage/Lingue";
 import Interessi from "./ComponentsProfilPage/Interessi";
 import CFooter from "./CFooter";
+import Esperienza from "./ComponentsProfilPage/Esperienza";
 
 const ProfilePage = () => {
   return (
@@ -26,7 +27,7 @@ const ProfilePage = () => {
       <Competenze />
       <Lingue />
       <Interessi />
-
+<Esperienza></Esperienza>
       <CFooter />
     </div>
   );
