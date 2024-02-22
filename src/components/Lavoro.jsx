@@ -59,7 +59,7 @@ const Lavoro = () => {
               </p>
               <hr />
               <h5>FRONT-END</h5>
-              <ListJobs category="Marketing" />
+              <ListJobs category="design" />
             </Col>
           </Row>
         </Container>

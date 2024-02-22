@@ -29,6 +29,8 @@ const jobsReducer = (state = initialState, action) => {
         isLoading: false,
         error: action.payload,
       };
+    default:
+      return state;
   }
 };
 

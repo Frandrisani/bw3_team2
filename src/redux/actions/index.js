@@ -389,10 +389,7 @@ export const fetchJobsByCategory = (category) => {
       if (!response.ok) throw new Error("Network response was not ok");
       const data = await response.json();
       console.log(data);
-      dispatch({
-        type: FETCH_CATEGORY,
-        payload: data,
-      });
+      dispatch(fetchJobsSuccess(data));
     } catch (error) {
       dispatch(fetchJobsFailure(error.toString()));
     }
