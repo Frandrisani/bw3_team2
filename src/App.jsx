@@ -20,7 +20,7 @@ function App() {
   return (
     <BrowserRouter>
       <Container>
-        <CNavbar />
+        {/* <CNavbar /> */}
 
         <Row>
           <Col lg={8}>

@@ -1,7 +1,8 @@
 import { Button, Col, Container, Row } from "react-bootstrap";
-import FooterHome from "./FooterHome";
+import { useDispatch, useSelector } from "react-redux";
 
 const Lavoro = () => {
+  const dispatch = useDispatch();
   return (
     <>
       <Container fluid>
@@ -45,10 +46,12 @@ const Lavoro = () => {
 
           <Col
             lg={6}
-            className="border border-secondary-subtle bg-white rounded-3 text-center mt-3 "
+            className="border border-secondary-subtle bg-white rounded-3 mt-3 "
           >
-            <h1>Consigliato per te</h1>
-            <p>Sulla base del tuo profilo di ricerca</p>
+            <h5 className="mb-0 mt-3">Consigliato per te</h5>
+            <p className="small ">
+              Sulla base del tuo profilo e della tua cronologia delle ricerche
+            </p>
           </Col>
         </Row>
       </Container>
