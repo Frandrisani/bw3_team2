@@ -63,3 +63,11 @@ GIORNO 3:
 - Redux per Post HOMEPAGE (Simone)
 - Creare sistema per cambio utente (Matteo)
 - Asaid sinitra HOMEPAGE (simone)
+
+--------------
+GIORNO 4:
+- Risolvere caricamento all'apparizione del sottoNavBar (Francesco)
+- Creare pagina statica JOBS (Matteo)
+- Creare Redux per pagina JOBS (Simone)
+- Risolvere sezione esperienze (Giulio)
+- giorno 5 ???? (Valerio)
