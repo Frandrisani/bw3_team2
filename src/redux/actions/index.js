@@ -12,6 +12,7 @@ export const GET_POSTS = "GET_POSTS"; // Aggiunto per i post della homepage
 export const FETCH_JOBS_START = "FETCH_JOBS_START";
 export const FETCH_JOBS_SUCCESS = "FETCH_JOBS_SUCCESS";
 export const FETCH_JOBS_FAILURE = "FETCH_JOBS_FAILURE";
+export const FETCH_CATEGORY = "FETCH_CATEGORY";
 
 //* FETCH DATI PROFILO PERSONALE -->  Qui in base al token che inseriamo ci restituisce gli elementi del nostro profilo
 export const getPersonalProfile = (props) => {
@@ -378,18 +379,20 @@ export const fetchJobsByCompany = (company) => {
   };
 };
 
-// Funzione per effettuare il fetch dei lavori per categoria
 export const fetchJobsByCategory = (category) => {
   return async (dispatch) => {
     dispatch(fetchJobsStart());
     try {
-      const url = `https://strive-benchmark.herokuapp.com/api/jobs?category=${category}&limit=10`;
+      const url = `https://strive-benchmark.herokuapp.com/api/jobs?category=${category}&limit=5`;
 
       const response = await fetch(url);
       if (!response.ok) throw new Error("Network response was not ok");
       const data = await response.json();
       console.log(data);
-      dispatch(fetchJobsSuccess(data));
+      dispatch({
+        type: FETCH_CATEGORY,
+        payload: data,
+      });
     } catch (error) {
       dispatch(fetchJobsFailure(error.toString()));
     }
