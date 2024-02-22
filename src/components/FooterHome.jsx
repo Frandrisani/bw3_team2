@@ -4,7 +4,7 @@ const FooterHome = () => {
   const annoCorrente = new Date().getFullYear();
   return (
     <>
-      <Container style={{ width: "330px" }}>
+      <Container style={{ width: "300px" }}>
         <Row className="mt-5">
           <Row>
             <Col className="d-flex justify-content-center">

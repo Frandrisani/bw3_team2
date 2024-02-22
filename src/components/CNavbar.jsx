@@ -25,6 +25,7 @@ import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getPersonalProfile } from "../redux/actions/index";
 import Logo from "/logoIn.png";
+import { Link } from "react-router-dom";
 
 const autorizzazioneProfili = {
   francesco:
@@ -154,12 +155,14 @@ const CNavbar = () => {
                     <div>Rete</div>
                   </Nav.Link>
                 </Nav.Item>
-                <Nav.Item style={{ marginLeft: "24px" }}>
-                  <Nav.Link href="#lavoro">
-                    <SuitcaseFill size={20} />
-                    <div>Lavoro</div>
-                  </Nav.Link>
-                </Nav.Item>
+                <Link to="/Lavoro">
+                  <Nav.Item style={{ marginLeft: "24px" }}>
+                    <Nav.Link href="#lavoro">
+                      <SuitcaseFill size={20} />
+                      <div>Lavoro</div>
+                    </Nav.Link>
+                  </Nav.Item>
+                </Link>
                 <Nav.Item style={{ marginLeft: "24px" }}>
                   <Nav.Link href="#messaggi">
                     <ChatDots size={20} />
