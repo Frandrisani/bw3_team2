@@ -3,7 +3,7 @@ import { getPosts } from "../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import CardHome from "./CardHome";
-import LeftAside from "./LeftAside"; // Assicurati di importare LeftAside
+import LeftAside from "./LeftAside";
 import { Row, Col } from "react-bootstrap";
 
 const HomePage = () => {
