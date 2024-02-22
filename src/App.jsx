@@ -20,7 +20,7 @@ function App() {
         <CNavbar />
 
         <Row>
-          <Col lg={6}>
+          <Col lg={8}>
             <Routes>
               <Route path="/" element={<HomePage />} />
               <Route path="/profile" element={<ProfilePage />} />
@@ -28,10 +28,7 @@ function App() {
               <Route path="/RisorsePage" element={<RisorsePage />} />{" "}
             </Routes>
           </Col>
-          <Col lg={3}>
-            {<Aside />}
-            {<FooterHome />}
-          </Col>
+          <Col lg={3}>{<Aside />}</Col>
         </Row>
       </Container>
     </BrowserRouter>
