@@ -25,7 +25,7 @@ export const getPersonalProfile = (props) => {
           headers: {
             Authorization: props
               ? `Bearer ${props}`
-              : `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWQ1ZDE0NmEzM2ZjOTAwMTk2NTgzMjMiLCJpYXQiOjE3MDg1MTE1NTgsImV4cCI6MTcwOTcyMTE1OH0.TDcAuNTbtvUC5JkCpv3vF6DurE3NM4sP3YP-hVFQZcc`,
+              : `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWQzMmIzMjI0ZjYwNTAwMTkzN2Q0N2QiLCJpYXQiOjE3MDg0MjE0NTAsImV4cCI6MTcwOTYzMTA1MH0.A7dfFaLi-Qz3L93JudrRf2DbTJnOnEHvC2GO6ohgF2U`,
             "Content-Type": "application/json",
           },
         }
