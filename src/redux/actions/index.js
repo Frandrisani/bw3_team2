@@ -14,6 +14,16 @@ export const FETCH_JOBS_SUCCESS = "FETCH_JOBS_SUCCESS";
 export const FETCH_JOBS_FAILURE = "FETCH_JOBS_FAILURE";
 export const FETCH_CATEGORY = "FETCH_CATEGORY";
 
+// --------
+export const setSelectedUser = (username, token) => ({
+  type: "SET_SELECTED_USER",
+  payload: {
+    username,
+    token,
+  },
+});
+// --------
+
 //* FETCH DATI PROFILO PERSONALE -->  Qui in base al token che inseriamo ci restituisce gli elementi del nostro profilo
 export const getPersonalProfile = (props) => {
   return async (dispatch, getState) => {

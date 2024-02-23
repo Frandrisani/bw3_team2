@@ -24,6 +24,7 @@ import {
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getPersonalProfile } from "../redux/actions/index";
+import { setSelectedUser } from "../redux/actions/utenteAttuale";
 import Logo from "/logoIn.png";
 import { Link } from "react-router-dom";
 
@@ -45,6 +46,7 @@ const CNavbar = () => {
   const dispatch = useDispatch();
   const profilo = useSelector((state) => state.profile.profileDettagli);
   const spinner = useSelector((state) => state.profile.isLoading);
+  const selectedUser = useSelector((state) => state.utenteAttuale);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const [newProfileName, setNewProfileName] = useState("matteo");
@@ -56,6 +58,7 @@ const CNavbar = () => {
   const xxx = () => {
     setNewProfileName(profileName);
     handleClose();
+    dispatch(setSelectedUser(profileName, newToken));
   };
 
   useEffect(() => {

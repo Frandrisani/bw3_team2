@@ -4,6 +4,7 @@ import postsReducer from "../reducers/postsReducer"; // Per homepage
 import jobsReducer from "../reducers/jobsReducer"; // Reducer per lavori
 import allExperienceReducer from "../reducers/allExperience";
 import singleExperienceReducer from "../reducers/singleExperience";
+import codeReducer from "../reducers/utenteAttuale";
 
 const globalReducer = combineReducers({
   profile: profileReducer,
@@ -11,6 +12,7 @@ const globalReducer = combineReducers({
   jobs: jobsReducer, // per lavoro
   allExperience: allExperienceReducer,
   singleExperience: singleExperienceReducer,
+  codeReducer: codeReducer,
 });
 
 const store = configureStore({
