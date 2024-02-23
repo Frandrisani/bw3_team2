@@ -4,7 +4,7 @@ import ListJobs from "./ListJobs";
 
 const Lavoro = () => {
   const loading = useSelector((state) => state.isLoading);
-
+  const categorie = ["development", "marketing", "design"];
   return (
     <>
       {loading === true ? (
@@ -58,8 +58,9 @@ const Lavoro = () => {
                 Sulla base del tuo profilo e della tua cronologia delle ricerche
               </p>
               <hr />
-              <h5>DEVELOPMENT</h5>
-              <ListJobs category="development" />
+              {categorie.map((category) => (
+                <ListJobs key={category} category={category} />
+              ))}
             </Col>
           </Row>
         </Container>

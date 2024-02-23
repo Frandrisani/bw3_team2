@@ -19,6 +19,7 @@ const ListJobs = ({ category }) => {
 
   return (
     <div>
+      <h5>{category}</h5>
       {isLoading && <p>Loading...</p>}
       {error && <p>Error: {error}</p>}
       <ListGroup>
