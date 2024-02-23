@@ -219,7 +219,7 @@ export const addExperience = (id, data) => {
   };
 };
 // FETCH UPDATE ESPERIENZA -->  Qui ci permette di modificare una esperienza
-export const updateExperience = (id, expId) => {
+export const updateExperience = (id, expId, newData) => {
   return async (dispatch, getState) => {
     try {
       let resp = await fetch(
@@ -230,6 +230,7 @@ export const updateExperience = (id, expId) => {
             Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWQzMmIzMjI0ZjYwNTAwMTkzN2Q0N2QiLCJpYXQiOjE3MDg0MjE0NTAsImV4cCI6MTcwOTYzMTA1MH0.A7dfFaLi-Qz3L93JudrRf2DbTJnOnEHvC2GO6ohgF2U`,
             "Content-Type": "application/json",
           },
+          body: JSON.stringify(newData),
         }
       );
       if (resp.ok) {

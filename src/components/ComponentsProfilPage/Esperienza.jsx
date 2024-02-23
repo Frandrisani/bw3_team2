@@ -17,7 +17,6 @@ import {
   getSingleExperience,
 } from "../../redux/actions";
 import { Link, useNavigate } from "react-router-dom";
-import ModEsperienza from "./ModEsperienza";
 
 const Esperienza = () => {
   const dispatch = useDispatch();
@@ -26,7 +25,6 @@ const Esperienza = () => {
     (state) => state.allExperience.allExperienceList
   );
   const [showModal, setShowModal] = useState(false);
-  const navigate = useNavigate();
 
   const [newExperience, setNewExperience] = useState({
     role: "",
@@ -39,18 +37,17 @@ const Esperienza = () => {
 
   useEffect(() => {
     if (userId) {
-      console.log("Recupero l'ID utente:", userId);
+      // console.log("Recupero l'ID utente:", userId);
       dispatch(getAllExperience(userId));
     }
   }, [dispatch, userId]);
 
   const handleModalOpen = () => {
     setShowModal(true);
-    // setExperienceId(experienceId)
   };
+
   const handleModOpen = (experienceId) => {
-    console.log("Experience ID:", experienceId);
-    // navigate(`/modEsperienza/${userId}/${experienceId}`)
+    // console.log("Experience ID:", experienceId);
     dispatch(getSingleExperience(userId, experienceId));
   };
   const handleModalClose = () => {
@@ -126,7 +123,6 @@ const Esperienza = () => {
                 </Row>
               </blockquote>
             </Card.Body>
-            {/* <ModEsperienza userId={userId} experienceId={experience._id} /> */}
           </Card>
         ))}
       {!allExperience.length && (
