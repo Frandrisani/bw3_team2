@@ -10,7 +10,7 @@ const RisorsePage = () => {
       >
         <div className=" border border-secondary-subtle bg-white rounded-3 w-75 mt-3 mb-3 ps-4">
           <h5 className="mt-4">
-            <Link to="/" className="text-decoration-none">
+            <Link to="/profile" className="text-decoration-none">
               <i className="bi bi-arrow-left me-3 text-dark"></i>
             </Link>
             Risorse

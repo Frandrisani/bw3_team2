@@ -58,7 +58,7 @@ const AnalisiPage = () => {
             <Row className="ms-3 my-3">
               <Col>
                 <div className="d-flex">
-                  <Link to="/" className="text-decoration-none">
+                  <Link to="/profile" className="text-decoration-none">
                     <img
                       src={profilo.image}
                       alt="logo"
