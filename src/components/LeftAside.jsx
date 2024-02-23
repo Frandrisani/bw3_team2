@@ -5,6 +5,11 @@ import { useSelector } from "react-redux";
 
 const LeftAside = () => {
   const profilo = useSelector((state) => state.profile.profileDettagli);
+
+  if (!profilo) {
+    return <div>Caricamento del profilo in corso...</div>;
+  }
+
   return (
     <Card
       style={{
