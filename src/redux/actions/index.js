@@ -118,7 +118,7 @@ export const getAllProfile = () => {
   };
 };
 
-//* FETCH DATI SINGLE EXPERIENCE -->  Qui ci restituisce tutte le esperienze di un singolo utente
+// FETCH DATI SINGLE EXPERIENCE -->  Qui ci restituisce tutte le esperienze di un singolo utente
 export const getSingleExperience = (id, expId) => {
   return async (dispatch, getState) => {
     try {
@@ -127,7 +127,7 @@ export const getSingleExperience = (id, expId) => {
         {
           method: "GET",
           headers: {
-            Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWQ1ZDE0NmEzM2ZjOTAwMTk2NTgzMjMiLCJpYXQiOjE3MDg1MTE1NTgsImV4cCI6MTcwOTcyMTE1OH0.TDcAuNTbtvUC5JkCpv3vF6DurE3NM4sP3YP-hVFQZcc`,
+            Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWQzMmIzMjI0ZjYwNTAwMTkzN2Q0N2QiLCJpYXQiOjE3MDg0MjE0NTAsImV4cCI6MTcwOTYzMTA1MH0.A7dfFaLi-Qz3L93JudrRf2DbTJnOnEHvC2GO6ohgF2U`,
             "Content-Type": "application/json",
           },
         }
@@ -151,8 +151,7 @@ export const getSingleExperience = (id, expId) => {
     }
   };
 };
-
-//* FETCH DATI ALL EXPERIENCE -->  Qui ci restituisce tutte le esperienze di tutti gli utenti
+// FETCH DATI ALL EXPERIENCE -->  Qui ci restituisce tutte le esperienze di tutti gli utenti
 export const getAllExperience = (id) => {
   return async (dispatch, getState) => {
     try {
@@ -185,8 +184,7 @@ export const getAllExperience = (id) => {
     }
   };
 };
-
-//* FETCH AGGIUNGERE ESPERIENZA -->  Qui ci permette di aggiungere una nuova esperienza
+// FETCH AGGIUNGERE ESPERIENZA -->  Qui ci permette di aggiungere una nuova esperienza
 export const addExperience = (id, data) => {
   return async (dispatch, getState) => {
     try {
@@ -220,8 +218,7 @@ export const addExperience = (id, data) => {
     }
   };
 };
-
-//* FETCH UPDATE ESPERIENZA -->  Qui ci permette di modificare una esperienza
+// FETCH UPDATE ESPERIENZA -->  Qui ci permette di modificare una esperienza
 export const updateExperience = (id, expId) => {
   return async (dispatch, getState) => {
     try {
@@ -254,8 +251,7 @@ export const updateExperience = (id, expId) => {
     }
   };
 };
-
-//* FETCH DELETE ESPERIENZA -->  Qui ci permette di eliminare una esperienza
+// FETCH DELETE ESPERIENZA -->  Qui ci permette di eliminare una esperienza
 export const deleteExperience = (id, expId) => {
   return async (dispatch, getState) => {
     try {
