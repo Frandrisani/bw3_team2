@@ -10,7 +10,7 @@ const UrlLinkdin = () => {
             <i className="bi bi-pencil-fill fs-5"></i>
           </div>
           <div>
-            <p>www.linkedin.com/in/valerio-galletti-70b656280</p>
+            <p>www.linkedin.com/in/70b656280</p>
           </div>
         </Col>
       </Row>
