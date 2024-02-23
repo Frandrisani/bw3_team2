@@ -20,7 +20,7 @@ const LeftAside = () => {
     >
       <Card.Img
         variant="top"
-        src="/path/to/profile-image.jpg"
+        src={profilo.image}
         style={{
           width: "80px",
           height: "80px",

@@ -12,7 +12,7 @@ function CardHome(prop) {
       ) : (
         prop.array.map((post, index) => {
           return (
-            <Card key={index}>
+            <Card key={index} className="mb-3">
               <Card.Body>
                 <Card.Title>
                   {post.user.name} {post.user.surname}

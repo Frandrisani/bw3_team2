@@ -52,11 +52,6 @@ const SubNavbarContent = () => {
   const profilo = useSelector((state) => state.profile.profileDettagli);
   const spinner = useSelector((state) => state.profile.isLoading);
 
-  useEffect(() => {
-    dispatch(getPersonalProfile());
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
   return (
     <Container>
       <div

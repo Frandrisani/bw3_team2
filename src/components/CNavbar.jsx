@@ -36,6 +36,8 @@ const autorizzazioneProfili = {
     "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWQzMmIzMjI0ZjYwNTAwMTkzN2Q0N2QiLCJpYXQiOjE3MDg0MjE0NTAsImV4cCI6MTcwOTYzMTA1MH0.A7dfFaLi-Qz3L93JudrRf2DbTJnOnEHvC2GO6ohgF2U",
   simone:
     "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWQzMTBjNDI0ZjYwNTAwMTkzN2Q0NGMiLCJpYXQiOjE3MDgzMzEyMDQsImV4cCI6MTcwOTU0MDgwNH0.jQqEZlorW4peoM1Scoy1oN7QuoEpJ1jl5anuqhJhRmk",
+  valerio:
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWQ2MWZlYWEzM2ZjOTAwMTk2NTg0NzMiLCJpYXQiOjE3MDg1MzE2OTAsImV4cCI6MTcwOTc0MTI5MH0.DxNl7BBtGOJKL0vFpN7u39oG1LHoF5Vtwv2oPyc1kN8",
 };
 const x = 2;
 const nomiProfilo = ["francesco", "matteo", "giulio", "simone", "valerio"];
