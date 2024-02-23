@@ -4,7 +4,7 @@ const UrlLinkdin = () => {
   return (
     <Container>
       <Row className="bg-white mb-3 rounded shadow">
-        <Col md={12}>
+        <Col md={12} className="p-3">
           <div className="d-flex justify-content-between">
             <h4>Public profile & URL</h4>
             <i className="bi bi-pencil-fill fs-5"></i>
