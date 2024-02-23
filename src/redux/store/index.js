@@ -12,3 +12,9 @@ const globalReducer = combineReducers({
   allExperience: allExperienceReducer,
   singleExperience: singleExperienceReducer,
 });
+
+const store = configureStore({
+  reducer: globalReducer,
+});
+
+export default store;
