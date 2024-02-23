@@ -1,4 +1,4 @@
-import { Button, Col, Container, ListGroup, Row } from "react-bootstrap";
+import { Button, Col, Container, Row } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import ListJobs from "./ListJobs";
 
@@ -11,7 +11,7 @@ const Lavoro = () => {
         <p>Loding..</p>
       ) : (
         <Container fluid>
-          <Row className=" justify-content-evenly ">
+          <Row className=" justify-content-evenly my-5 pt-3">
             <Col lg={3}>
               <Row className="mt-3">
                 <Col className="border border-secondary-subtle bg-white rounded-3">
@@ -40,9 +40,9 @@ const Lavoro = () => {
                 variant=""
                 className="d-flex border border-3 border-primary text-primary rounded-5 mt-3 px-3 py-0"
               >
-                <i className="bi bi-pencil mt-3 me-3"></i>
+                <i className="bi bi-pencil mt-3 me-1"></i>
                 <div>
-                  <p className="small text-center fw-bold mt-2">
+                  <p className="small text-center fw-bold mt-3">
                     Pubblica offerta gratuita
                   </p>
                 </div>
@@ -50,7 +50,7 @@ const Lavoro = () => {
             </Col>
 
             <Col
-              lg={6}
+              lg={7}
               className="border border-secondary-subtle bg-white rounded-3 mt-3 "
             >
               <h5 className="mb-0 mt-3">Consigliato per te</h5>
@@ -58,8 +58,8 @@ const Lavoro = () => {
                 Sulla base del tuo profilo e della tua cronologia delle ricerche
               </p>
               <hr />
-              <h5>FRONT-END</h5>
-              <ListJobs category="design" />
+              <h5>DEVELOPMENT</h5>
+              <ListJobs category="development" />
             </Col>
           </Row>
         </Container>

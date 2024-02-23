@@ -383,7 +383,7 @@ export const fetchJobsByCategory = (category) => {
   return async (dispatch) => {
     dispatch(fetchJobsStart());
     try {
-      const url = `https://strive-benchmark.herokuapp.com/api/jobs?category=${category}&limit=5`;
+      const url = `https://strive-benchmark.herokuapp.com/api/jobs?category=${category}&limit=6`;
 
       const response = await fetch(url);
       if (!response.ok) throw new Error("Network response was not ok");
