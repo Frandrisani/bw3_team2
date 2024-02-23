@@ -24,7 +24,7 @@ import {
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getPersonalProfile } from "../redux/actions/index";
-import { setSelectedUser } from "../redux/actions/utenteAttuale";
+import { setSelectedUser } from "../redux/actions/index";
 import Logo from "/logoIn.png";
 import { Link } from "react-router-dom";
 

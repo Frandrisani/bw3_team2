@@ -129,7 +129,7 @@ export const getAllProfile = () => {
 };
 
 // FETCH DATI SINGLE EXPERIENCE -->  Qui ci restituisce tutte le esperienze di un singolo utente
-export const getSingleExperience = (id, expId) => {
+export const getSingleExperience = (id, expId, selectedUserToken) => {
   return async (dispatch, getState) => {
     try {
       let resp = await fetch(
@@ -137,7 +137,7 @@ export const getSingleExperience = (id, expId) => {
         {
           method: "GET",
           headers: {
-            Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWQzMmIzMjI0ZjYwNTAwMTkzN2Q0N2QiLCJpYXQiOjE3MDg0MjE0NTAsImV4cCI6MTcwOTYzMTA1MH0.A7dfFaLi-Qz3L93JudrRf2DbTJnOnEHvC2GO6ohgF2U`,
+            Authorization: `Bearer ${selectedUserToken}`,
             "Content-Type": "application/json",
           },
         }
@@ -162,7 +162,7 @@ export const getSingleExperience = (id, expId) => {
   };
 };
 // FETCH DATI ALL EXPERIENCE -->  Qui ci restituisce tutte le esperienze di tutti gli utenti
-export const getAllExperience = (id) => {
+export const getAllExperience = (id, token) => {
   return async (dispatch, getState) => {
     try {
       let resp = await fetch(
@@ -170,7 +170,7 @@ export const getAllExperience = (id) => {
         {
           method: "GET",
           headers: {
-            Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWQzMmIzMjI0ZjYwNTAwMTkzN2Q0N2QiLCJpYXQiOjE3MDg0MjE0NTAsImV4cCI6MTcwOTYzMTA1MH0.A7dfFaLi-Qz3L93JudrRf2DbTJnOnEHvC2GO6ohgF2U`,
+            Authorization: `Bearer ${token}`,
             "Content-Type": "application/json",
           },
         }

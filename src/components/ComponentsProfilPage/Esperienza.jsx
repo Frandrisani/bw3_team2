@@ -25,8 +25,10 @@ const Esperienza = () => {
   const allExperience = useSelector(
     (state) => state.allExperience.allExperienceList
   );
+  const selectedUser = useSelector((state) => state.utenteAttuale);
   const [showModal, setShowModal] = useState(false);
   const navigate = useNavigate();
+  const selectedUserToken = selectedUser?.token;
 
   const [newExperience, setNewExperience] = useState({
     role: "",
@@ -40,9 +42,9 @@ const Esperienza = () => {
   useEffect(() => {
     if (userId) {
       console.log("Recupero l'ID utente:", userId);
-      dispatch(getAllExperience(userId));
+      dispatch(getAllExperience(userId, selectedUserToken));
     }
-  }, [dispatch, userId]);
+  }, [dispatch, userId, selectedUserToken]);
 
   const handleModalOpen = () => {
     setShowModal(true);
@@ -51,7 +53,7 @@ const Esperienza = () => {
   const handleModOpen = (experienceId) => {
     console.log("Experience ID:", experienceId);
     // navigate(`/modEsperienza/${userId}/${experienceId}`)
-    dispatch(getSingleExperience(userId, experienceId));
+    dispatch(getSingleExperience(userId, experienceId, selectedUserToken));
   };
   const handleModalClose = () => {
     setShowModal(false);
