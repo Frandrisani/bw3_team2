@@ -187,7 +187,7 @@ export const getAllExperience = (id) => {
 };
 
 //* FETCH AGGIUNGERE ESPERIENZA -->  Qui ci permette di aggiungere una nuova esperienza
-export const addExperience = (id) => {
+export const addExperience = (id, data) => {
   return async (dispatch, getState) => {
     try {
       let resp = await fetch(
@@ -198,6 +198,7 @@ export const addExperience = (id) => {
             Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWQzMmIzMjI0ZjYwNTAwMTkzN2Q0N2QiLCJpYXQiOjE3MDg0MjE0NTAsImV4cCI6MTcwOTYzMTA1MH0.A7dfFaLi-Qz3L93JudrRf2DbTJnOnEHvC2GO6ohgF2U`,
             "Content-Type": "application/json",
           },
+          body: JSON.stringify(data),
         }
       );
       if (resp.ok) {
