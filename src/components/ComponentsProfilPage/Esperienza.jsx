@@ -76,7 +76,7 @@ const Esperienza = () => {
   };
 
   return (
-    <div>
+    <div style={{ width: "800px", marginLeft: "auto", marginRight: "auto" }}>
       {allExperience &&
         allExperience.map((experience) => (
           <Card key={experience._id} className="m-3 expCard">
