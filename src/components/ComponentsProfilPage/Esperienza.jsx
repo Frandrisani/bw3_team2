@@ -109,7 +109,11 @@ const Esperienza = () => {
               <blockquote className="blockquote mb-0">
                 <Row>
                   <Col xs={2}>
-                    <img src={experience.image} alt="experience img" />
+                    <img
+                      src="/public/0x0.png"
+                      alt="experience img"
+                      width={50}
+                    />
                   </Col>
                   <Col xs={10}>
                     <h2>{experience.role}</h2>

@@ -9,6 +9,7 @@ import HomePage from "./components/HomePage";
 import CNavbar from "./components/CNavbar";
 import FooterHome from "./components/FooterHome";
 import Lavoro from "./components/Lavoro";
+import ModEsperienza from "./components/ComponentsProfilPage/ModEsperienza";
 
 // Componente Layout per utilizzare useLocation
 const Layout = () => {
@@ -29,6 +30,10 @@ const Layout = () => {
             <Route path="/Lavoro" element={<Lavoro />} />
             <Route path="/AnalisiPage" element={<AnalisiPage />} />
             <Route path="/RisorsePage" element={<RisorsePage />} />
+            <Route
+              path="/modEsperienza/:userId/:experienceId"
+              element={<ModEsperienza />}
+            />
           </Routes>
         </Col>
         <Col lg={3}>
